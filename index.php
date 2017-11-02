@@ -26,16 +26,13 @@
       </div>
       <div id="content">
         <div class="ct pictures">
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title and info</p>
-            </div>
+          <div class="row">
+
           </div>
           <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Title</p>
+              <p class="card-text">Title and info</p>
             </div>
           </div>
           <div class="card" style="width: 20rem;">
