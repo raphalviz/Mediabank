@@ -18,12 +18,57 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </nav>
-    <div>
+    <div id="main">
       <div id="sidebar">
-        sidebar
+        <div class="sb content">
+          sidebar
+        </div>
       </div>
       <div id="content">
-        test
+        <div class="ct pictures">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title and info</p>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title</p>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title</p>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title</p>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title</p>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title</p>
+            </div>
+          </div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Title</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

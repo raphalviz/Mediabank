@@ -2,15 +2,37 @@
     border: 1px solid red;
 } */
 
+#main {
+  display: flex;
+  width: 100%;
+}
+
 #sidebar {
-    background-color: #3a3a3a;
-    float: left;
-    color: white;
-    height: calc(100vh - 56px);
-    width: 100%;
-    max-width: 300px;
+  background-color: #3a3a3a;
+  float: left;
+  color: white;
+  height: calc(100vh - 56px);
+  width: 100%;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.sb.content {
+  margin: 25px;
 }
 
 #content {
-    float: right;
+  max-width: 100%;
+}
+
+.ct.pictures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  margin: 40px;
+}
+
+.ct.pictures > .card {
+  margin-bottom: 30px;
 }
