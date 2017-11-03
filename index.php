@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="stylesheet/styles.css">
     <!-- FOR DEVELOPMENT ONLY, SWITCH TO MINIFIED AFTER -->
     <script src="js/lib/vue.js"></script>
   </head>
@@ -26,45 +26,64 @@
       </div>
       <div id="content">
         <div class="ct pictures">
-          <div class="row">
-
-          </div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title and info</p>
+          <div class="container">
+            <div class="row">
+              <!-- <div class="card col-lg-3 col-md-4">
+                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Title and info</p>
+                </div>
+              </div>
+              <div class="card col-lg-3 col-md-4">
+                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Title</p>
+                </div>
+              </div>
+              <div class="card col-lg-3 col-md-4">
+                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Title</p>
+                </div>
+              </div>
+              <div class="card col-lg-3 col-md-4">
+                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Title</p>
+                </div>
+              </div>
+              <div class="card col-lg-3 col-md-4">
+                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Title</p>
+                </div>
+              </div> -->
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
             </div>
           </div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title</p>
-            </div>
-          </div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title</p>
-            </div>
-          </div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title</p>
-            </div>
-          </div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title</p>
-            </div>
-          </div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Title</p>
-            </div>
-          </div>
+        </div>
+        <div class="controls">
+          <nav aria-text="Pagination">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item disabled">
+                <a class="page-link">Next</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
