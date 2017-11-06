@@ -1,7 +1,6 @@
 <?php 
 
-abstract class API
-{
+abstract class API {
   /**
    * Property: method
    * The HTTP method this request was made in, either GET, POST, PUT or DELETE
@@ -49,11 +48,11 @@ abstract class API
     $this->method = $_SERVER['REQUEST_METHOD'];
     if ($this->method == 'POST' && array_key_exists('HTTP_X_HTTP_METHOD', $_SERVER)) {
       if ($_SERVER['HTTP_X_HTTP_METHOD'] == 'DELETE') {
-          $this->method = 'DELETE';
+        $this->method = 'DELETE';
       } else if ($_SERVER['HTTP_X_HTTP_METHOD'] == 'PUT') {
-          $this->method = 'PUT';
+        $this->method = 'PUT';
       } else {
-          throw new Exception("Unexpected Header");
+        throw new Exception("Unexpected Header");
       }
     }
 

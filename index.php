@@ -1,72 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <!-- FOR DEVELOPMENT ONLY, SWITCH TO MINIFIED AFTER -->
-    <script src="js/lib/vue.js"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand">Navbar</a>
-      <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-    <div id="main">
-      <div id="sidebar">
-        <div class="sb content">
-          sidebar
-        </div>
-      </div>
+<? include "partials/header.php" ?>
       <div id="content">
         <div class="ct pictures">
           <div class="container">
-            <div class="row">
-              <!-- <div class="card col-lg-3 col-md-4">
-                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Title and info</p>
+            <div class="row justify-content-center">
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
                 </div>
               </div>
-              <div class="card col-lg-3 col-md-4">
-                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Title</p>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
                 </div>
               </div>
-              <div class="card col-lg-3 col-md-4">
-                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Title</p>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
                 </div>
               </div>
-              <div class="card col-lg-3 col-md-4">
-                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Title</p>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
                 </div>
               </div>
-              <div class="card col-lg-3 col-md-4">
-                <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Title</p>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
                 </div>
-              </div> -->
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+
+                <!-- <div  class="photo-card col-lg-3 col-md-4 col-sm-6">
+                  <div class="thumbnail">
+                    <img src="images/testimg.jpg" alt="ye">
+                  </div>
+                  <div class="options">
+                  icon
+                  </div>
+                </div>
+                <div class="photo-card col-lg-3 col-md-4 col-sm-6">
+                  <div class="photo-card">
+                    <div class="thumbnail">
+                      <img src="images/test2.jpg" alt="ye">
+                    </div>
+                    <div class="options">
+                    icon
+                    </div>
+                  </div>
+                </div> -->
+                <!-- <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
                 <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
                 <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
                 <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
                 <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
                 <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
                 <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
+                <div class="card col-lg-3 col-md-4 col-sm-6">1</div> -->
             </div>
           </div>
         </div>
@@ -86,6 +121,4 @@
           </nav>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+<?php include "partials/footer.php" ?>
