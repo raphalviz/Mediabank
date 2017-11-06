@@ -2,7 +2,43 @@
       <div id="content">
         <div class="ct pictures">
           <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-left">
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <div class="crop">
+                    <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img-top" src="images/test2.jpg" alt="Card image cap"></a>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="card">
+                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">Title and info</p>
+                  </div>
+                </div>
+              </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
                   <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">

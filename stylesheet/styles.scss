@@ -5,6 +5,7 @@ $sidebar: #3a3a3a;
 
 #main {
   display: flex;
+  min-height: calc(100vh - 56px);
   width: 100%;
 }
 
@@ -12,7 +13,6 @@ $sidebar: #3a3a3a;
   background-color: $sidebar;
   float: left;
   color: white;
-  height: calc(100vh - 56px);
   width: 100%;
   min-width: 300px;
   max-width: 300px;
@@ -50,6 +50,17 @@ $sidebar: #3a3a3a;
   .row {
     .card {
       margin: 3%;
+      .card-body {
+        padding: 7px 15px;
+      }
+      .crop {
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        img {
+          width: 130%;
+        }
+      }
     }
   }
 }
