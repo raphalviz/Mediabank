@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet/styles.css">
+    <link rel="stylesheet" href="stylesheet/fa/css/font-awesome.min.css">
     <!-- FOR DEVELOPMENT ONLY, SWITCH TO MINIFIED AFTER -->
     <script src="js/lib/vue.js"></script>
   </head>
@@ -23,6 +24,13 @@
         <div class="sb content">
           <ul class="options">
             <li>Filters</li>
+            <li>
+              <ul>
+              <li>Date</li>
+              <li>Event Name</li>
+              <li>Event Type</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>

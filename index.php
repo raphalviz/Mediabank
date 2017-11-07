@@ -5,156 +5,138 @@
             <div class="row justify-content-left">
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    <a href="image.php"><i class="fa fa-search" aria-hidden="true"></i></a>
+                  </div>
                   <div class="crop">
-                    <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  </div>
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                    <img class="card-img grow" src="images/testimg.jpg" alt="Card image cap">
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
                   <div class="crop">
-                    <a href="image.php"><img class="card-img-top" src="images/test2.jpg" alt="Card image cap"></a>
-                  </div>
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                    <a href="image.php"><img class="card-img grow" src="images/test2.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test3.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test4.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test5.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test6.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test7.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test2.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test3.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test4.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test5.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test6.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-4">
                 <div class="card">
-                  <img class="card-img-top" src="images/testimg.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <p class="card-text">Title and info</p>
+                  <div class="overlay">
+                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="crop">
+                    <a href="image.php"><img class="card-img grow" src="images/test7.jpg" alt="Card image cap"></a>
                   </div>
                 </div>
               </div>
-
-                <!-- <div  class="photo-card col-lg-3 col-md-4 col-sm-6">
-                  <div class="thumbnail">
-                    <img src="images/testimg.jpg" alt="ye">
-                  </div>
-                  <div class="options">
-                  icon
-                  </div>
-                </div>
-                <div class="photo-card col-lg-3 col-md-4 col-sm-6">
-                  <div class="photo-card">
-                    <div class="thumbnail">
-                      <img src="images/test2.jpg" alt="ye">
-                    </div>
-                    <div class="options">
-                    icon
-                    </div>
-                  </div>
-                </div> -->
-                <!-- <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div>
-                <div class="card col-lg-3 col-md-4 col-sm-6">1</div> -->
+              <?php include "generators.php"; echo createImageCard(1, "images/testimg.jpg")?>
             </div>
           </div>
-        </div>
-        <div class="controls">
-          <nav aria-text="Pagination">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item disabled">
-                <a class="page-link">Next</a>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
 <?php include "partials/footer.php" ?>
