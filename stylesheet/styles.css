@@ -15,6 +15,9 @@
     font-family: "Lato", Arial, Helvetica, sans-serif;
     list-style-type: none;
     padding-left: 0; }
+    #sidebar .options > li {
+      font-weight: 500;
+      color: #6b7184; }
     #sidebar .options ul {
       list-style-type: none; }
     #sidebar .options .filters {

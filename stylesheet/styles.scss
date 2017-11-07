@@ -2,6 +2,7 @@
 //     border: 1px solid red;
 // }
 $sidebar: #3a3a3a;
+$sideblue: #6b7184;
 
 #main {
   display: flex;
@@ -18,6 +19,10 @@ $sidebar: #3a3a3a;
   -webkit-box-shadow: -13px 0px 50px 0px #888;
   box-shadow: -13px 0px 50px 0px #888;
   .options {
+    & > li {
+      font-weight: 500;
+      color: $sideblue;
+    }
     font-family: "Lato", Arial, Helvetica, sans-serif;
     list-style-type: none;
     padding-left: 0;
