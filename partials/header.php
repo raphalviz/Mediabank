@@ -12,23 +12,24 @@
     <script src="js/lib/vue.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
+    <!-- <nav class="navbar navbar-light bg-light justify-content-between">
       <a class="navbar-brand" href="index.php">Navbar</a>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-    </nav>
+    </nav> -->
     <div id="main">
       <div id="sidebar">
         <div class="sb content">
           <ul class="options">
-            <li>Filters</li>
+            <li>FILTERS</li>
+            <hr>
             <li>
-              <ul>
-              <li>Date</li>
-              <li>Event Name</li>
-              <li>Event Type</li>
+              <ul class="filters">
+                <li>Date</li>
+                <li>Event Name</li>
+                <li>Event Type</li>
               </ul>
             </li>
           </ul>

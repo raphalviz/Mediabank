@@ -1,6 +1,6 @@
-* {
-    border: 1px solid red;
-}
+// * {
+//     border: 1px solid red;
+// }
 $sidebar: #3a3a3a;
 
 #main {
@@ -10,19 +10,29 @@ $sidebar: #3a3a3a;
 }
 
 #sidebar {
-  background-color: $sidebar;
   float: left;
-  color: white;
   width: 100%;
   min-width: 300px;
   max-width: 300px;
+  min-height: 100vh;
+  -webkit-box-shadow: -13px 0px 50px 0px #888;
+  box-shadow: -13px 0px 50px 0px #888;
   .options {
     font-family: "Lato", Arial, Helvetica, sans-serif;
     list-style-type: none;
     padding-left: 0;
     ul {
       list-style-type: none;
-      padding-left: 10px;
+    }
+    .filters {
+      padding-left: 3px;
+      li {
+        padding: 10px;
+        transition: all .2s ease-in-out;
+        &:hover {
+          background-color: rgb(184, 216, 226);
+        }
+      }
     }
   }
   
