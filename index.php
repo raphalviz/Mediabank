@@ -136,7 +136,17 @@
                   </div>
                 </div>
               </div>
-              <?php echo createImageCard(1, "images/testimg.jpg")?>
+              <?php 
+                echo createImageCard(1, "images/testimg.jpg");
+
+                for ($i = 2; $i < 10; $i++) {
+                  echo createImageCard($i, "images/test" . $i . ".jpg");
+                }
+                for ($i = 2; $i < 10; $i++) {
+                  echo createImageCard($i, "images/test" . $i . ".jpg");
+                }
+
+              ?>
             </div>
           </div>
         </div>

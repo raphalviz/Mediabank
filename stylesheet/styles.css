@@ -13,6 +13,52 @@
   min-height: 100vh;
   -webkit-box-shadow: -13px 0px 50px 0px #888;
   box-shadow: -13px 0px 50px 0px #888; }
+  #sidebar .top-menu {
+    display: flex;
+    height: 57px;
+    background-color: #858e98;
+    color: white; }
+    #sidebar .top-menu .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      transition: all .2s ease-in-out;
+      max-width: 57px;
+      background-color: #4f5a66; }
+      #sidebar .top-menu .home:hover {
+        background-color: #171b1e; }
+      #sidebar .top-menu .home i {
+        font-size: 30px !important; }
+    #sidebar .top-menu .settings {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      transition: all .2s ease-in-out;
+      max-width: 57px;
+      background-color: #5f6a75; }
+      #sidebar .top-menu .settings:hover {
+        background-color: #262a2f; }
+      #sidebar .top-menu .settings i {
+        font-size: 30px !important; }
+    #sidebar .top-menu .upload {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 4;
+      transition: all .2s ease-in-out;
+      background-color: #6e7983;
+      font-family: "Lato", Arial, Helvetica, sans-serif;
+      letter-spacing: 1px; }
+      #sidebar .top-menu .upload:hover {
+        background-color: #34393e; }
+      #sidebar .top-menu .upload i {
+        font-size: 23px !important; }
+      #sidebar .top-menu .upload > div {
+        display: flex;
+        align-items: center;
+        padding-right: 13px; }
   #sidebar .searchbar {
     display: flex;
     justify-content: flex-start;
@@ -75,8 +121,6 @@
           font-size: 14px; }
         #sidebar .options .filters .right-icon.check {
           transition: all .2s ease-in-out; }
-          #sidebar .options .filters .right-icon.check:hover {
-            background-color: #b8d8e2; }
       #sidebar .options .filters .sub-dropdown ul li {
         font-size: 12px;
         padding: 5px; }

@@ -1,4 +1,14 @@
 <div id="sidebar">
+  <div class="top-menu">
+    <div class="home"><i class="fa fa-home" aria-hidden="true"></i></div>
+    <div class="settings"><i class="fa fa-cog" aria-hidden="true"></i></div>
+    <div class="upload">
+      <div>
+        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> 
+        <span>UPLOAD</span>
+      </div>
+    </div>
+  </div>
   <div class="content">
     <div class="searchbar">
       <i class="fa fa-search" aria-hidden="true"></i>
