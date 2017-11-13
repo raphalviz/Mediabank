@@ -23,12 +23,8 @@
             <ul>
               <li class="sub-filter">
                 <div class="right-icon drop" data-toggle="collapse" data-target="#months">
-                  <div class="title">
-                    Month
-                  </div>
-                  <span class="icon">
-                    +
-                  </span>
+                  <div class="title">Month</div>
+                  <span class="icon">+</span>
                 </div>
               </li>
               <div id="months" class="collapse sub-dropdown">
@@ -44,12 +40,8 @@
               </div>
               <li class="sub-filter">
                 <div class="right-icon drop" data-toggle="collapse" data-target="#years">
-                  <div class="title">
-                    Year
-                  </div>
-                  <span class="icon">
-                    +
-                  </span>
+                  <div class="title">Year</div>
+                  <span class="icon">+</span>
                 </div>
               </li>
               <div id="years" class="collapse sub-dropdown">
