@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="stylesheet/styles.css">
     <link rel="stylesheet" href="stylesheet/fa/css/font-awesome.min.css">
     <!-- FOR DEVELOPMENT ONLY, SWITCH TO MINIFIED AFTER -->
-    <script src="js/lib/vue.js"></script>
+    <!-- <script src="js/lib/vue.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- <nav class="navbar navbar-light bg-light justify-content-between">
@@ -20,18 +24,7 @@
       </form>
     </nav> -->
     <div id="main">
-      <div id="sidebar">
-        <div class="sb content">
-          <ul class="options">
-            <li>FILTERS</li>
-            <hr>
-            <li>
-              <ul class="filters">
-                <li>Date</li>
-                <li>Event Name</li>
-                <li>Event Type</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <?php 
+        include "generators.php";
+        include "sidebar.php"; 
+      ?>

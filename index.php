@@ -1,9 +1,11 @@
-<? include "partials/header.php" ?>
+<? 
+  include "partials/header.php";
+?>
       <div id="content">
         <div class="ct pictures">
           <div class="container">
-            <div class="row justify-content-left">
-              <div class="col-xl-3 col-lg-4 col-md-4">
+            <div class="row justify-content-left infscroll">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -14,7 +16,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -24,7 +26,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                 <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -34,7 +36,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -44,7 +46,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -54,7 +56,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -64,7 +66,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -74,7 +76,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -84,7 +86,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                 <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -94,7 +96,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -104,7 +106,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -114,7 +116,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -124,7 +126,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-4">
+              <div class="col-xl-3 col-lg-4 col-md-6 card-container">
                 <div class="card">
                   <div class="overlay">
                     <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -134,7 +136,7 @@
                   </div>
                 </div>
               </div>
-              <?php include "generators.php"; echo createImageCard(1, "images/testimg.jpg")?>
+              <?php echo createImageCard(1, "images/testimg.jpg")?>
             </div>
           </div>
         </div>
