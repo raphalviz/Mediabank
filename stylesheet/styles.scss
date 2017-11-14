@@ -3,6 +3,7 @@
 // }
 $sidebar: #3a3a3a;
 $sideblue: #6b7184;
+$dlgreen: #4bb580;
 
 @mixin main-icons($grow, $bgcolor) {
   display: flex;
@@ -24,8 +25,14 @@ $sideblue: #6b7184;
   }
 }
 
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
 #main {
+  position: relative;
   display: flex;
+
   min-height: calc(100vh - 56px);
   width: 100%;
 }
@@ -258,8 +265,14 @@ $sideblue: #6b7184;
 }
 
 .spec.content {
+  position: relative;
+  
   width: 100%;
-  margin: 50px;
+  margin-left: 300px;
+
+  .container {
+    padding: 70px;
+  }
 
   .options {
     @media (min-width: 992px) {
@@ -284,16 +297,21 @@ $sideblue: #6b7184;
 .grow { transition: all .2s ease-in-out; }
 
 .overlay {
-  transition: all .2s ease-in-out;
+  display: flex;
   position: absolute;
+  justify-content: center;
+  align-items: center;
+  
   width: 100%;
   height: 100%;
   z-index: 1;
-  filter: opacity(0%);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: all .2s ease-in-out;
+  filter: opacity(0%);
+  
+  i:hover {
+    cursor: pointer;
+  }
 }
 
 .overlay:hover + .crop .grow {
@@ -311,4 +329,72 @@ i {
   font-size: 50px !important;
   filter: opacity(70%);
   margin: 7px;
+}
+
+#image-modal {
+  img {
+    width: 100%;
+  }
+  
+  div.modal-content {
+    border-radius: 0 !important;
+  }
+
+  div.modal-body {
+    padding: 0 !important;
+
+  
+    div.container {
+      @include fa-size(15px);
+      padding: 0 !important;
+
+      .btn-dl {
+        width: 100%;
+        letter-spacing: 1px;
+
+        background-color: $dlgreen;
+        border: none;
+        cursor: pointer;
+      }
+
+      .corner-opt {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .image-big{
+        padding: 0 !important;
+      }
+
+      .image-info{
+        padding: 15px !important;
+        
+        display: flex;
+
+        flex-direction: column;
+        justify-content: space-between;
+
+        .close {
+          width: 14px;
+          cursor: pointer;
+        }
+      }
+
+      .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 900px;
+    margin: 30px auto;
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
 }

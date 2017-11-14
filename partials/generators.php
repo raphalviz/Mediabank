@@ -20,7 +20,7 @@
       <li>
         <div class="right-icon check">
           <span>' . $text . '</span>
-          <input type="checkbox" name="' . $text . '">
+          <input id="' . strtolower($text) . '-checkbox" type="checkbox" name="' . $text . '">
         </div>
       </li>';
 
