@@ -10,7 +10,7 @@
                 <div class="card">
                   <div class="overlay">
                     <i class="fa fa-download" aria-hidden="true"></i>
-                    <i id="img-1" class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#image-modal"></i>
+                    <i id="img-1" class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#image-modal" data-id="1"></i>
                   </div>
                   <div class="crop">
                     <img class="card-img grow" src="images/testimg.jpg" alt="Card image cap">
