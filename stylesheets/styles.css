@@ -53,6 +53,7 @@ body {
       flex-grow: 4;
       transition: all .2s ease-in-out;
       background-color: #6e7983;
+      cursor: pointer;
       font-family: "Lato", Arial, Helvetica, sans-serif;
       letter-spacing: 1px; }
       #sidebar .top-menu .upload:hover {
@@ -92,7 +93,7 @@ body {
     #sidebar .searchbar input[type=text]:focus {
       outline: none; }
   #sidebar .options {
-    max-height: calc(100vh - 110px);
+    max-height: calc(100vh - 140px);
     overflow: scroll;
     font-family: "Lato", Arial, Helvetica, sans-serif;
     list-style-type: none;
@@ -262,7 +263,7 @@ i {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 900px;
-    margin: 30px auto; } }
+    margin: 20vh auto; } }
 
 .no-padding {
   padding: 0 !important; }

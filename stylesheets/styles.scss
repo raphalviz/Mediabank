@@ -74,8 +74,10 @@ body {
     .upload {
       @include main-icons(4, #6e7983);
       @include fa-size(23px);
-      
+
       background-color: #6e7983;
+
+      cursor: pointer;
 
       font-family: "Lato", Arial, Helvetica, sans-serif;
       letter-spacing: 1px;
@@ -129,7 +131,7 @@ body {
   }
 
   .options {
-    max-height: calc(100vh - 110px);
+    max-height: calc(100vh - 140px);
     overflow: scroll;
     font-family: "Lato", Arial, Helvetica, sans-serif;
     list-style-type: none;
@@ -290,7 +292,7 @@ body {
     border-radius: 4px;
     padding: 5px;
     width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
 
@@ -391,7 +393,7 @@ i {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 900px;
-    margin: 30px auto;
+    margin: 20vh auto;
   }
 }
 
