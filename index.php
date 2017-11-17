@@ -35,6 +35,8 @@
             for ($i = 2; $i < 10; $i++) {
               echo createImageCard($i, "images/test" . $i . ".jpg");
             }
+
+            // echo readImageResponse(readJSONFile('../testdata.json'));
           ?>
         </div>
       </div>

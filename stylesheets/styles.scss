@@ -42,7 +42,7 @@ body {
   position: fixed;
   float: left;
 
-  height: 100vh;
+  height: 100%;
   width: 100%;
   min-width: 300px;
   max-width: 300px;
@@ -395,6 +395,13 @@ i {
 }
 
 @media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 600px;
+    margin: 20vh auto;
+  }
+}
+
+@media (min-width: 992px) {
   .modal-dialog {
     max-width: 900px;
     margin: 20vh auto;

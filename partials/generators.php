@@ -1,4 +1,22 @@
 <?php
+  function readJSONFile($path) {
+    $str = file_get_contents($path);
+    $json = json_decode($str);
+    return $json;
+  }
+
+  function readImageResponse($json) {
+    $innerHtml = '';
+
+    foreach ($json as $key => $value) {
+      $innerHtml .= createImageCard($value['id'], $value['filepath']);
+    }
+
+    $innerHtml .= '<h1>hello</hi>';
+    
+    return $innerHtml;
+  }
+
   function createImageCard($id, $filepath) {
     $card = '
     <div class="col-xl-3 col-lg-4 col-md-6 card-container">
