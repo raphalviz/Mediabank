@@ -27,6 +27,7 @@ $dlgreen: #4bb580;
 
 body {
   font-family: "Lato", Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 #main {
@@ -132,12 +133,15 @@ body {
 
   .options {
     max-height: calc(100vh - 140px);
-    overflow: scroll;
-    font-family: "Lato", Arial, Helvetica, sans-serif;
-    list-style-type: none;
+
     padding-left: 0;
     padding-right: 25px;
     margin: 25px 0 25px 25px;
+
+    overflow: auto;
+
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    list-style-type: none;
     
     ul {
       list-style-type: none;
