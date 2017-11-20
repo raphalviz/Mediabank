@@ -5,18 +5,6 @@
     return $json;
   }
 
-  function readImageResponse($json) {
-    $innerHtml = '';
-
-    foreach ($json as $key => $value) {
-      $innerHtml .= createImageCard($value['id'], $value['filepath']);
-    }
-
-    $innerHtml .= '<h1>hello</hi>';
-    
-    return $innerHtml;
-  }
-
   function createImageCard($id, $filepath) {
     $card = '
     <div class="col-xl-3 col-lg-4 col-md-6 card-container">
@@ -33,6 +21,17 @@
 
     return $card;
   };
+
+  function readImageResponse($json) {
+    $innerHtml = '';
+
+    foreach ($json as $media) {
+      $innerHtml .= createImageCard($media->id, $media->filepath);
+    }
+    
+    return $innerHtml;
+  }
+
 
   function createFilterCheckbox($text) {
     $innerHtml = '
