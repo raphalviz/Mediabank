@@ -3,6 +3,7 @@
 // }
 $sidebar: #3a3a3a;
 $sideblue: #6b7184;
+$buttonblue: #03A9F4;
 $dlgreen: #4bb580;
 
 @mixin main-icons($grow, $bgcolor) {
@@ -426,6 +427,14 @@ i {
       cursor: pointer;
       font-size: 25px;
     }
+  }
+
+  #dropzone {
+    width: 70%;
+    height: 350px;
+
+    background-color: white;
+    box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.11)
   }
 }
 

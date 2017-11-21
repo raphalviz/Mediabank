@@ -284,6 +284,11 @@ i {
     #upload-page .top-controls span {
       cursor: pointer;
       font-size: 25px; }
+  #upload-page #dropzone {
+    width: 70%;
+    height: 350px;
+    background-color: white;
+    box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.11); }
 
 .active-upload {
   left: 0 !important;
