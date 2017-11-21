@@ -22,4 +22,8 @@
   $('div.top-menu > .upload, div.top-controls > .close').click(function (event) {
     toggleUploadPage();
   })
+
+  Dropzone.options.uploadform = {
+    maxFilesize: 0.1
+  }
 })()

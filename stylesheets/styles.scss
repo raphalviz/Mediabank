@@ -429,12 +429,19 @@ i {
     }
   }
 
+  .upload-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  }
+
   #dropzone {
     width: 70%;
     height: 350px;
 
     background-color: white;
-    box-shadow: 3px 3px 9px 0 rgba(0, 0, 0, 0.11)
+    border-radius: 5px;
+    box-shadow: 9px 7px 20px 0 rgba(0, 0, 0, 0.11);
   }
 }
 
@@ -460,4 +467,33 @@ i {
 
 .no-padding {
   padding: 0 !important;
+}
+
+.stitched {
+  border:2px dashed #a8a8a8;
+  box-shadow: 0 0 0 8px #ffffff;
+}
+
+.inner-drop {
+  @include fa-size(37px);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 5px;
+
+  i {
+    color: #a8a8a8;
+  }
+
+  span {
+    margin-left: 10px;
+    color: #a8a8a8;
+    font-size: 20px;
+  }
 }
