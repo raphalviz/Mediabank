@@ -406,7 +406,7 @@ i {
 
   flex-direction: column;
 
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 
   padding: 15px 30px 30px 30px;
@@ -429,6 +429,14 @@ i {
     }
   }
 
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+
   .upload-container {
     display: flex;
     justify-content: center;
@@ -436,18 +444,32 @@ i {
   }
 
   #dropzone {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+
     width: 70%;
     height: 350px;
 
     background-color: white;
     border-radius: 5px;
     box-shadow: 9px 7px 20px 0 rgba(0, 0, 0, 0.11);
+
+    i {
+      color: rgb(180, 180, 180)
+    }
+
+    .dz-message {
+      color: rgb(180, 180, 180);
+      font-size: 18px;
+      margin-left: 10px;
+    }
   }
 }
 
 .active-upload {
   left: 0 !important;
-  
   filter: opacity(100%) !important;
 }
 
@@ -496,4 +518,8 @@ i {
     color: #a8a8a8;
     font-size: 20px;
   }
+}
+
+.naisu-box-shadow {
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.11);
 }

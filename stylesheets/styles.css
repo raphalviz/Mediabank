@@ -269,7 +269,7 @@ i {
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   padding: 15px 30px 30px 30px;
   top: 0;
@@ -284,16 +284,30 @@ i {
     #upload-page .top-controls span {
       cursor: pointer;
       font-size: 25px; }
+  #upload-page .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   #upload-page .upload-container {
     display: flex;
     justify-content: center;
     margin: 30px; }
   #upload-page #dropzone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 70%;
     height: 350px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 9px 7px 20px 0 rgba(0, 0, 0, 0.11); }
+    #upload-page #dropzone i {
+      color: #b4b4b4; }
+    #upload-page #dropzone .dz-message {
+      color: #b4b4b4;
+      font-size: 18px;
+      margin-left: 10px; }
 
 .active-upload {
   left: 0 !important;
@@ -331,3 +345,6 @@ i {
     margin-left: 10px;
     color: #a8a8a8;
     font-size: 20px; }
+
+.naisu-box-shadow {
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.11); }

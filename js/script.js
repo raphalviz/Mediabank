@@ -23,7 +23,8 @@
     toggleUploadPage();
   })
 
-  Dropzone.options.uploadform = {
-    maxFilesize: 0.1
+  Dropzone.options.dropzone = {
+    maxFilesize: 0.1,
+    previewsContainer: '#previews'
   }
 })()
