@@ -289,6 +289,24 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    #upload-page .form-wrapper #previews {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 400px);
+      width: 70%;
+      margin-top: 30px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.05); }
+      #upload-page .form-wrapper #previews #preview-header {
+        width: 100%;
+        margin-bottom: 0;
+        color: white;
+        background-color: black;
+        border-radius: 5px 5px 0 0; }
+      #upload-page .form-wrapper #previews #preview-list {
+        overflow: scroll;
+        border-radius: 0 0 5px 5px; }
   #upload-page .upload-container {
     display: flex;
     justify-content: center;
@@ -298,10 +316,11 @@ i {
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 350px;
+    height: 250px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 9px 7px 20px 0 rgba(0, 0, 0, 0.11); }
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.05);
+    transition: all .21s ease-in-out; }
     #upload-page #dropzone i {
       color: #b4b4b4; }
     #upload-page #dropzone .dz-message {
@@ -348,3 +367,11 @@ i {
 
 .naisu-box-shadow {
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.11); }
+
+div.dz-preview {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #ebebeb solid; }
+  div.dz-preview div.dz-details {
+    display: flex;
+    flex-direction: row-reverse; }

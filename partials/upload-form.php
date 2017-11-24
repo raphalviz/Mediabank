@@ -8,6 +8,11 @@
         <i class="fa fa-upload" aria-hidden="true"></i>
     </form>
     <div id="previews" class="dropzone-previews">
+      <div id="preview-header">
+        <h1 id="swag">test</h1>
+      </div>
+      <div id="preview-list">
+      </div>
     </div>
   </div>
 </div>

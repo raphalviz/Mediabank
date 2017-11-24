@@ -1,3 +1,4 @@
+"use strict";
 (function() {
   var displayedData;
 
@@ -24,7 +25,37 @@
   })
 
   Dropzone.options.dropzone = {
-    maxFilesize: 0.1,
-    previewsContainer: '#previews'
+    addRemoveLinks: true,
+    previewsContainer: '#preview-list',
+    previewTemplate: `
+      <div class="dz-preview dz-file-preview">
+        <div class="dz-details">
+          <div class="dz-filename"><span data-dz-name></span></div>
+          <div class="dz-size" data-dz-size></div>
+          <img data-dz-thumbnail />
+        </div>
+        <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+        <div class="dz-success-mark"><span>✔</span></div>
+        <div class="dz-error-mark"><span>✘</span></div>
+        <div class="dz-error-message"><span data-dz-errormessage></span></div>
+      </div>
+    `,
+
+    init: function () {
+      this.on('dragover', function () {
+        console.log('file on dropzone');
+        $('#dropzone').css('border', '2px dashed #3eadf9');
+      })
+      
+      this.on('dragleave', function () {
+        console.log('file left dropzone');
+        $('#dropzone').css('border', '2px dashed #a8a8a8');
+      })
+
+      this.on('drop', function () {
+        console.log('file dropped');
+        $('#dropzone').css('border', '2px dashed #a8a8a8');
+      })
+    }
   }
 })()
