@@ -30,31 +30,57 @@
     previewTemplate: `
       <div class="dz-preview dz-file-preview">
         <div class="dz-details">
-          <div class="dz-filename"><span data-dz-name></span></div>
-          <div class="dz-size" data-dz-size></div>
+          <div class="dz-filename flex-align"><span data-dz-name></span></div>
+          <div class="dz-size flex-align" data-dz-size></div>
           <img data-dz-thumbnail />
         </div>
         <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
-        <div class="dz-success-mark"><span>✔</span></div>
+        <!--<div class="dz-success-mark"><span>✔</span></div>
         <div class="dz-error-mark"><span>✘</span></div>
-        <div class="dz-error-message"><span data-dz-errormessage></span></div>
+        <div class="dz-error-message"><span data-dz-errormessage></span></div>-->
       </div>
     `,
 
     init: function () {
+      var dropzone = $('#dropzone');
+      var uploadIcon = $('.fa-upload');
+      var dzPrompt = $('.dz-message');
+
       this.on('dragover', function () {
-        console.log('file on dropzone');
-        $('#dropzone').css('border', '2px dashed #3eadf9');
+        dropzone.css('border', '2px dashed #3eadf9');
+        dropzone.css('background-color', '#bfeaff');
+        uploadIcon.css('color', '#3eadf9');
+        uploadIcon.addClass('important-size-i');
+        dzPrompt.css('color', '#3eadf9');
+        dzPrompt.addClass('important-size-prompt');
       })
       
       this.on('dragleave', function () {
-        console.log('file left dropzone');
-        $('#dropzone').css('border', '2px dashed #a8a8a8');
+        dropzone.css('border', '2px dashed #a8a8a8');
+        dropzone.css('background-color', 'white');
+        uploadIcon.css('color', '#a8a8a8');
+        uploadIcon.removeClass('important-size-i');
+        dzPrompt.css('color', '#a8a8a8');
+        dzPrompt.removeClass('important-size-prompt');
+      })
+      
+      this.on('drop', function () {
+        dropzone.css('border', '2px dashed #a8a8a8');
+        dropzone.css('background-color', 'white');
+        uploadIcon.css('color', '#a8a8a8');
+        uploadIcon.removeClass('important-size-i');
+        dzPrompt.css('color', '#a8a8a8');
+        dzPrompt.removeClass('important-size-prompt');
       })
 
-      this.on('drop', function () {
-        console.log('file dropped');
-        $('#dropzone').css('border', '2px dashed #a8a8a8');
+      this.on('addedfile', function () {
+        dropzone.css('height', '12%');
+      })
+      
+      this.on('removedfile', function () {
+        if (this.files.length === 0) {
+          dropzone.css('height', '100%');
+        }
       })
     }
   }

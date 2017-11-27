@@ -3,6 +3,8 @@
 // }
 $sidebar: #3a3a3a;
 $sideblue: #6b7184;
+$doomdada: #dadada;
+
 $buttonblue: #03A9F4;
 $dlgreen: #4bb580;
 
@@ -442,24 +444,44 @@ i {
 
       height: calc(100vh - 400px);
       width: 70%;
+      max-width: 860px;
 
       margin-top: 30px;
       
       background-color: white;
+      border: 1px solid $doomdada;
       border-radius: 5px;
       box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.05);
 
       #preview-header {
         width: 100%;
+        padding: 15px 25px;
         margin-bottom: 0;
 
         color: white;
-        background-color: black;
+        background-color: #f7f7f7;
+
+        border-bottom: 1px solid $doomdada;
         border-radius: 5px 5px 0 0;
+
+        h3 {
+          margin-bottom: 0;
+
+          color: #a2a2a2;
+          font-weight: 200;
+          letter-spacing: 1px;
+        }
+
+        .header-wrapper {
+          display: inline-flex;
+          justify-content: space-between;
+          width: 100%;
+        }
       }
 
       #preview-list {
         overflow: scroll;
+        height: 100%;
         border-radius: 0 0 5px 5px;
       }
     }
@@ -476,24 +498,33 @@ i {
     
     justify-content: center;
     align-items: center;
-
-    width: 70%;
-    height: 250px;
+    
+    width: 100%;
+    max-width: 860px;
+    height: 100%;
 
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.05);
 
     transition: all .21s ease-in-out;
 
     i {
-      color: rgb(180, 180, 180)
+      color: rgb(180, 180, 180);
+      transition: all .21s ease-in-out;
+      filter: opacity(100%) !important;
     }
 
     .dz-message {
       color: rgb(180, 180, 180);
       font-size: 18px;
       margin-left: 10px;
+
+      transition: all .21s ease-in-out;
+
+      span {
+        font-weight: 200;
+      }
     }
   }
 }
@@ -550,9 +581,11 @@ i {
   }
 }
 
-.naisu-box-shadow {
-  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.11);
-}
+.naisu-box-shadow { box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.11); }
+.flex-align { display: flex; align-items: center }
+.important-size-i { font-size: 57px !important; }
+.important-size-prompt { font-size: 20px !important; }
+
 
 
 // DZ PREVIEW
@@ -565,5 +598,24 @@ div.dz-preview {
   div.dz-details {
     display: flex;
     flex-direction: row-reverse;
+
+    min-height: 120px;
+
+    div.dz-filename {
+      margin-left: 20px;
+      font-weight: 200;
+    }
+
+    div.dz-size {
+      margin-left: 20px;
+      font-weight: 200;
+    }
+  }
+
+  a.dz-remove {
+    display: flex;
+    align-items: center;
+    padding-right: 35px;
+    font-weight: 200;
   }
 }
