@@ -1,11 +1,16 @@
 "use strict";
 (function() {
   var displayedData;
+  var progress = 0;
 
   var toggleUploadPage = function () {
     var uploadPage = $('#upload-page');
     uploadPage.hasClass('active-upload') ? uploadPage.removeClass('active-upload') : uploadPage.addClass('active-upload');
   }
+  
+  $('div.top-menu > .upload, div.top-controls > .close').click(function (event) {
+    toggleUploadPage();
+  })
 
   $('#image-modal').on('show.bs.modal', function (event) {
     var result;
@@ -20,12 +25,14 @@
     })
   })
 
-  $('div.top-menu > .upload, div.top-controls > .close').click(function (event) {
-    toggleUploadPage();
-  })
+  // $('#submit-dz').click(function () {
+  //   $('#dropzone').submit();
+  // })
 
   Dropzone.options.dropzone = {
     addRemoveLinks: true,
+    autoProcessQueue: false,
+    maxFiles: 50,
     previewsContainer: '#preview-list',
     previewTemplate: `
       <div class="dz-preview dz-file-preview">
@@ -40,11 +47,13 @@
         <div class="dz-error-message"><span data-dz-errormessage></span></div>-->
       </div>
     `,
+    url: 'partials/upload.php',
 
     init: function () {
       var dropzone = $('#dropzone');
       var uploadIcon = $('.fa-upload');
       var dzPrompt = $('.dz-message');
+      var myDz = this;
 
       this.on('dragover', function () {
         dropzone.css('border', '2px dashed #3eadf9');
@@ -81,6 +90,28 @@
         if (this.files.length === 0) {
           dropzone.css('height', '100%');
         }
+      })
+
+      $('#submit-dz').on('click', function (e) {
+        progress = 0;
+        myDz.processQueue();
+      })
+      
+      this.on('success', function (file, response) {
+        myDz.processQueue();
+        console.log("RESPONSE: ", response);
+        console.log(file);
+        // file.previewElement.style.backgroundColor = "#efffe2";
+      })
+
+      this.on('totaluploadprogress', function (response) {
+        progress <= response ? progress = response : progress;
+        console.log(progress);
+        // $('.progress-bar').width(progress + '%');
+      })
+
+      this.on('addedfile', function () {
+        $('#submit-dz').css('display', 'block');
       })
     }
   }

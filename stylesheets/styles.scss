@@ -476,6 +476,10 @@ i {
           display: inline-flex;
           justify-content: space-between;
           width: 100%;
+
+          #submit-dz {
+            display: none;
+          }
         }
       }
 
@@ -618,4 +622,9 @@ div.dz-preview {
     padding-right: 35px;
     font-weight: 200;
   }
+}
+
+.progress-bar {
+  -webkit-transition: width 2.5s ease;
+  transition: width 1.5s ease;
 }

@@ -317,6 +317,8 @@ i {
           display: inline-flex;
           justify-content: space-between;
           width: 100%; }
+          #upload-page .form-wrapper #previews #preview-header .header-wrapper #submit-dz {
+            display: none; }
       #upload-page .form-wrapper #previews #preview-list {
         overflow: scroll;
         height: 100%;
@@ -417,3 +419,7 @@ div.dz-preview {
     align-items: center;
     padding-right: 35px;
     font-weight: 200; }
+
+.progress-bar {
+  -webkit-transition: width 2.5s ease;
+  transition: width 1.5s ease; }
