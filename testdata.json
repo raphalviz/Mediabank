@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "filepath": "images/test1.jpg"
+    "filepath": "images/test1.jpg",
+    "eventName": "Get Started"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
   },
   {
     "id": 4,
-    "filepath": "images/test4.jpg"
+    "filepath": "images/test4.jpg",
+    "eventName": "Get Started"
   },
   {
     "id": 5,
@@ -25,7 +27,8 @@
   },
   {
     "id": 7,
-    "filepath": "images/test7.jpg"
+    "filepath": "images/test7.jpg",
+    "eventName": "Get Started"
   },
   {
     "id": 8,
