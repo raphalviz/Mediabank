@@ -27,4 +27,22 @@
     }
   }
 
+  function searchByKeyword($keywords) {
+    $return_array = array();
+    $keywords = implode('|', explode(' ', $keywords));
+
+    $stmt = $dbConnection->prepare('SELECT * FROM Media WHERE keywords REGEXP ?');
+    $stmt->bind_param('s', $keywords);
+
+    $stmt->execute();
+    
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+      array_push($return_array, $row);
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($return_array);
+  }
+
 ?>
