@@ -16,9 +16,10 @@
     $newFilename = time() . '_' . uniqid($more_entropy = true) . '_' . $_FILES['file']['name'];
       
     $targetFile =  $targetPath . $newFilename;
+    $thumbnailPath = $targetPath . $ds . 'thumbnails' . $ds;
 
     move_uploaded_file($tempFile, $targetFile);
-    makeThumbnails($targetPath . $ds . 'thumbnails' . $ds, $targetFile, $newFilename, 250, 200);
+    makeThumbnails($thumbnailPath, $targetFile, $newFilename, 250, 200);
   }
 
   print_r($_POST);
