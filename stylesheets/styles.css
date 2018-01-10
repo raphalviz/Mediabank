@@ -276,8 +276,7 @@ i {
   left: -100%;
   z-index: 2;
   transition: all 0.37s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-  background-color: #ebedef;
-  filter: opacity(0%); }
+  background-color: rgba(235, 237, 239, 0.37); }
   #upload-page .top-controls {
     display: flex;
     justify-content: flex-end; }
