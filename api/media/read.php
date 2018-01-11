@@ -7,13 +7,15 @@ include_once '../db.php';
 $database = new Database();
 $db = $database->getConnection();
 
+$method = $_POST['method'];
+
 function findById($db, $id) {
   $query = 'SELECT * FROM Media WHERE MediaID = ?';
   $stmt = $db->prepare($query);
   $stmt->execute([$id]);
   $result = $stmt->fetch(PDO::FETCH_ASSOC);
   
-  return $result;
+  echo json_encode($result);
 }
 
 function findAll($db) {
@@ -22,10 +24,32 @@ function findAll($db) {
   $stmt->execute();
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  return $result;
+  echo json_encode($result);
 }
 
-$result = findAll($db);
-echo json_encode($result);
+function searchByKeyword($db, $keywords) {
+  $return_array = array();
+  $keywords = implode('|', explode(' ', $keywords));
+
+  $query = 'SELECT * FROM Media WHERE keywords REGEXP ?';
+  $stmt = $db->prepare($query);
+  $stmt->execute([$keywords]);
+  
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  echo json_encode($result);
+}
+
+switch ($method) {
+  case 'findbyid':
+    findById($db, $_POST['id']);
+    break;
+  case 'findall':
+    findAll($db);
+    break;
+  case 'keywords':
+    searchByKeyword($db, $_POST['keywords']);
+    break;
+}
 
 ?>

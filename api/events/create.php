@@ -13,6 +13,6 @@ function createOne($db, $values) {
   $stmt->execute($values);
 }
 
-echo $_POST;
+createOne($db, array($_POST['name'], $_POST['type']));
 
 ?>

@@ -37,30 +37,30 @@
     $percent = (($MaxHe * 100) / $height);
 
     if($width > $height) {
-        $newWidth=$MaxWe;
-        $newHeight=round(($height*$percent)/100);
+      $newWidth=$MaxWe;
+      $newHeight=round(($height*$percent)/100);
     }else{
-        $newWidth=round(($width*$percent)/100);
-        $newHeight=$MaxHe;
+      $newWidth=round(($width*$percent)/100);
+      $newHeight=$MaxHe;
     }
 
     if ($arr_image_details[2] == 1) {
-        $imgt = "ImageGIF";
-        $imgcreatefrom = "ImageCreateFromGIF";
+      $imgt = "ImageGIF";
+      $imgcreatefrom = "ImageCreateFromGIF";
     }
     if ($arr_image_details[2] == 2) {
-        $imgt = "ImageJPEG";
-        $imgcreatefrom = "ImageCreateFromJPEG";
+      $imgt = "ImageJPEG";
+      $imgcreatefrom = "ImageCreateFromJPEG";
     }
     if ($arr_image_details[2] == 3) {
-        $imgt = "ImagePNG";
-        $imgcreatefrom = "ImageCreateFromPNG";
+      $imgt = "ImagePNG";
+      $imgcreatefrom = "ImageCreateFromPNG";
     }
 
     if ($imgt) {
-        $old_image = $imgcreatefrom($img);
-        $new_image = imagecreatetruecolor($newWidth, $newHeight);
-        imagecopyresized($new_image, $old_image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+      $old_image = $imgcreatefrom($img);
+      $new_image = imagecreatetruecolor($newWidth, $newHeight);
+      imagecopyresized($new_image, $old_image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
 
       $imgt($new_image, substr($updir . "" . $id, 0, -4) . "_t.jpg", 100);
       return;    

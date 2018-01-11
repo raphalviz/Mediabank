@@ -13,4 +13,5 @@ function createOne($db, $values) {
   $stmt->execute($values);
 }
 
+createOne($db, array($_POST['firstname'], $_POST['lastname']));
 ?>

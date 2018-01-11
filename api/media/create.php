@@ -13,6 +13,5 @@ function createOne($db, $values) {
   $stmt->execute($values);
 }
 
-createOne($db, array('path/ye', '2018', 'image', date('Y-m-d H:i:s'), 'test keywords'))
-
+createOne($db, array($_POST['path'], $_POST['year'], $_POST['type'], date('Y-m-d H:i:s'), $_POST['keywords']));
 ?>
