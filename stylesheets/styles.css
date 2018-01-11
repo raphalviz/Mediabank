@@ -32,9 +32,9 @@ body {
       flex-grow: 1;
       transition: all .2s ease-in-out;
       max-width: 57px;
-      background-color: #4f5a66; }
+      background-color: #0269c5; }
       #sidebar .top-menu .home:hover {
-        background-color: #171b1e; }
+        background-color: #002d55; }
       #sidebar .top-menu .home i {
         font-size: 30px !important; }
     #sidebar .top-menu .settings {
@@ -44,9 +44,9 @@ body {
       flex-grow: 1;
       transition: all .2s ease-in-out;
       max-width: 57px;
-      background-color: #5f6a75; }
+      background-color: #027dec; }
       #sidebar .top-menu .settings:hover {
-        background-color: #262a2f; }
+        background-color: #044b88; }
       #sidebar .top-menu .settings i {
         font-size: 30px !important; }
     #sidebar .top-menu .upload {
@@ -55,12 +55,12 @@ body {
       align-items: center;
       flex-grow: 4;
       transition: all .2s ease-in-out;
-      background-color: #6e7983;
+      background-color: #369cf9;
       cursor: pointer;
       font-family: "Lato", Arial, Helvetica, sans-serif;
       letter-spacing: 1px; }
       #sidebar .top-menu .upload:hover {
-        background-color: #34393e; }
+        background-color: #0362bb; }
       #sidebar .top-menu .upload i {
         font-size: 23px !important; }
       #sidebar .top-menu .upload > div {
@@ -276,7 +276,7 @@ i {
   left: -100%;
   z-index: 2;
   transition: all 0.37s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-  background-color: rgba(235, 237, 239, 0.37); }
+  background-color: rgba(0, 0, 0, 0.37); }
   #upload-page .top-controls {
     display: flex;
     justify-content: flex-end; }
