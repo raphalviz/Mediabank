@@ -33,7 +33,7 @@
     addRemoveLinks: true,
     autoProcessQueue: false,
     maxFiles: 50,
-    previewsContainer: '#preview-list',
+    previewsContainer: '#queue-previews',
     previewTemplate: `
       <div class="dz-preview dz-file-preview">
         <div class="dz-details">
@@ -83,7 +83,7 @@
       })
 
       this.on('addedfile', function () {
-        dropzone.css('height', '12%');
+        // dropzone.css('height', '12%');
       })
       
       this.on('removedfile', function () {

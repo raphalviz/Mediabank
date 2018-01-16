@@ -319,6 +319,9 @@ i {
           #upload-page .form-wrapper #previews #preview-header .header-wrapper #submit-dz {
             display: none; }
       #upload-page .form-wrapper #previews #preview-list {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
         overflow: scroll;
         height: 100%;
         border-radius: 0 0 5px 5px; }
@@ -328,13 +331,14 @@ i {
     margin: 30px; }
   #upload-page #dropzone {
     display: flex;
+    flex: 2;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 860px;
     height: 100%;
     background-color: white;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.05);
     transition: all .21s ease-in-out; }
     #upload-page #dropzone i {
@@ -348,6 +352,11 @@ i {
       transition: all .21s ease-in-out; }
       #upload-page #dropzone .dz-message span {
         font-weight: 200; }
+  #upload-page #queue-previews {
+    flex: 3;
+    overflow: scroll; }
+  #upload-page #upload-info {
+    flex: 1; }
 
 .active-upload {
   left: 0 !important;
@@ -422,3 +431,6 @@ div.dz-preview {
 .progress-bar {
   -webkit-transition: width 2.5s ease;
   transition: width 1.5s ease; }
+
+.form-group {
+  margin-bottom: 0 !important; }
