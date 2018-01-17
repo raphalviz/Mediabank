@@ -27,12 +27,12 @@
             <small id="emailHelp" class="form-text text-muted">All queued files will be associated with this event.</small>
           </div>
           <div class="form-group">
-            <label for="inputEvent">Year</label>
-            <input type="text" class="form-control" id="inputEvent" aria-describedby="event" placeholder="Enter year">
+            <label for="inputYear">Year</label>
+            <input type="text" class="form-control" id="inputYear" aria-describedby="year" placeholder="Enter year">
           </div>
           <div class="form-group">
-            <label for="inputEvent">Keywords</label>
-            <input type="text" class="form-control" id="inputEvent" aria-describedby="event" placeholder="Enter keywords">
+            <label for="inputKeywords">Keywords</label>
+            <input type="text" class="form-control" id="inputKeywords" aria-describedby="event" placeholder="Enter keywords">
           </div>
         </div>
       </div>

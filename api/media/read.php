@@ -7,7 +7,7 @@ include_once '../db.php';
 $database = new Database();
 $db = $database->getConnection();
 
-$method = $_POST['method'];
+$method = $_GET['method'];
 
 function findById($db, $id) {
   $query = 'SELECT * FROM Media WHERE MediaID = ?';
@@ -42,13 +42,13 @@ function searchByKeyword($db, $keywords) {
 
 switch ($method) {
   case 'findbyid':
-    findById($db, $_POST['id']);
+    findById($db, $_GET['id']);
     break;
   case 'findall':
     findAll($db);
     break;
   case 'keywords':
-    searchByKeyword($db, $_POST['keywords']);
+    searchByKeyword($db, $_GET['keywords']);
     break;
 }
 

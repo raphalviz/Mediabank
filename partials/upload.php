@@ -20,10 +20,9 @@
 
     move_uploaded_file($tempFile, $targetFile);
     makeThumbnails($thumbnailPath, $targetFile, $newFilename, 250, 200);
+
+    echo json_encode($targetFile, JSON_UNESCAPED_SLASHES);
   }
-
-  print_r($_POST);
-
 
   function makeThumbnails($updir, $img, $id,$MaxWe=100,$MaxHe=150){
     $arr_image_details = getimagesize($img); 

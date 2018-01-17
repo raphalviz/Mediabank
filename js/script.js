@@ -1,6 +1,7 @@
 "use strict";
 (function() {
   var displayedData;
+  var postBody = {};
   var progress = 0;
 
   var toggleUploadPage = function () {
@@ -82,9 +83,9 @@
         dzPrompt.removeClass('important-size-prompt');
       })
 
-      this.on('addedfile', function () {
-        // dropzone.css('height', '12%');
-      })
+      // this.on('addedfile', function () {
+      //   // dropzone.css('height', '12%');
+      // })
       
       this.on('removedfile', function () {
         if (this.files.length === 0) {
@@ -93,14 +94,29 @@
       })
 
       $('#submit-dz').on('click', function (e) {
+        var eventName, eventYear, keywords;
         progress = 0;
         myDz.processQueue();
+
+        // TODO: Get text inputs for info and then send POST request
+        eventName = document.getElementById('inputEvent').innerHTML;
+        eventYear = document.getElementById('inputYear').innerHTML;
+        keywords = document.getElementById('inputKeywords').innerHTML;
+
+        postBody['event'] = eventName;
+        postBody['year'] = eventYear;
+        postBody['keywords'] = keywords;
+        // $.post('api/media/create.php')
       })
       
       this.on('success', function (file, response) {
         myDz.processQueue();
-        console.log("RESPONSE: ", response);
-        console.log(file);
+
+        var filepath = response;
+        
+        postBody['path'] = $.parseJSON(filepath);
+
+        console.log(postBody);
         // file.previewElement.style.backgroundColor = "#efffe2";
       })
 
