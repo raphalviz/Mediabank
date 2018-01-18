@@ -29,13 +29,29 @@ var view = (function () {
     data.forEach(media => {
       template += view.generateThumb(media.MediaID, media.path);
     });
-    return template; 
+    return template;
   }
 
   view.updateDisplay = function (data) {
     var template = view.generateDisplay(data);
     mediaGrid.innerHTML = template;
   }
+
+  view.startupDisplay = function () {
+    state.clearState();
+    document.dispatchEvent(new CustomEvent('onStartUp', { detail: {} }));
+  }
+
+  // When magnifying glass on image is clicked:
+  $('#image-modal').on('show.bs.modal', function (event) {
+    var result;
+    var button = $(event.relatedTarget);
+    var id = button.data('id')
+    var modal = $(this);
+
+    result = $.grep(state.currentData, function (e) { return e.MediaID == id })[0];
+    modal.find('.modal-img').attr('src', result['path']);
+  })
 
   return view;
 })();
