@@ -5,7 +5,7 @@
   <div id="content">
     <div class="ct pictures">
       <div class="container">
-        <div class="row justify-content-left infscroll">
+        <div id="media-grid" class="row justify-content-left infscroll">
           <?php 
             $json = readJSONFile('testdata.json');
             echo readImageResponse($json);

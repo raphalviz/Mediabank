@@ -13,6 +13,7 @@
     toggleUploadPage();
   })
 
+  // When magnifying glass on image is clicked:
   $('#image-modal').on('show.bs.modal', function (event) {
     var result;
     var button = $(event.relatedTarget);
@@ -25,10 +26,6 @@
       modal.find('.modal-img').attr('src', result['filepath']);
     })
   })
-
-  // $('#submit-dz').click(function () {
-  //   $('#dropzone').submit();
-  // })
 
   Dropzone.options.dropzone = {
     addRemoveLinks: true,
@@ -82,10 +79,6 @@
         dzPrompt.css('color', '#a8a8a8');
         dzPrompt.removeClass('important-size-prompt');
       })
-
-      // this.on('addedfile', function () {
-      //   // dropzone.css('height', '12%');
-      // })
       
       this.on('removedfile', function () {
         if (this.files.length === 0) {
@@ -99,14 +92,13 @@
         myDz.processQueue();
 
         // TODO: Get text inputs for info and then send POST request
-        eventName = document.getElementById('inputEvent').innerHTML;
-        eventYear = document.getElementById('inputYear').innerHTML;
-        keywords = document.getElementById('inputKeywords').innerHTML;
+        eventName = document.getElementById('inputEvent').value;
+        eventYear = document.getElementById('inputYear').value;
+        keywords = document.getElementById('inputKeywords').value;
 
         postBody['event'] = eventName;
         postBody['year'] = eventYear;
         postBody['keywords'] = keywords;
-        // $.post('api/media/create.php')
       })
       
       this.on('success', function (file, response) {
@@ -116,8 +108,13 @@
         
         postBody['path'] = $.parseJSON(filepath);
 
-        console.log(postBody);
-        // file.previewElement.style.backgroundColor = "#efffe2";
+        if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(postBody['path']) === true) {
+          postBody['type'] = "image";
+        }
+
+        $.post('api/media/create.php', postBody, function(res) {
+          console.log(res);
+        })
       })
 
       this.on('totaluploadprogress', function (response) {

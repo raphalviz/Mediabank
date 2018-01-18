@@ -32,7 +32,7 @@
           </div>
           <div class="form-group">
             <label for="inputKeywords">Keywords</label>
-            <input type="text" class="form-control" id="inputKeywords" aria-describedby="event" placeholder="Enter keywords">
+            <input type="text" class="form-control" id="inputKeywords" aria-describedby="keywords" placeholder="Enter keywords">
           </div>
         </div>
       </div>

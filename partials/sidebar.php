@@ -12,7 +12,7 @@
   <div class="content">
     <div class="searchbar">
       <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="search" type="text" placeholder="Search here...">
+      <input id="side-searchbar" class="search" type="text" placeholder="Search here...">
     </div>
     <ul class="options">
       <li>FILTERS</li>
