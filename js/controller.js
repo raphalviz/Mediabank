@@ -3,7 +3,7 @@
 
   var searchbar = document.getElementById('side-searchbar');
 
-  document.onload = function (e) {
+  window.onload = function (e) {
     view.startupDisplay();
   }
 
@@ -19,9 +19,11 @@
     if (searchbar.value === '') {
       findAndUpdateState();
     } else {
+      state.searchIsLoading = true;
       model.searchByKeywords(searchbar.value, function (res) {
         results = res;
         state.updateState(results);
+        state.searchIsLoading = false;
       })
     }
   })

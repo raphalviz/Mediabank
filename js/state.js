@@ -1,7 +1,8 @@
 "use strict";
 var state = (function () {
   var state = {
-    currentData: []
+    currentData: [],
+    searchIsLoading: false
   };
 
   state.printState = function () {

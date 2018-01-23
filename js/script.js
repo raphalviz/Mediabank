@@ -1,5 +1,5 @@
 "use strict";
-(function() {
+(function () {
   var displayedData;
   var postBody = {};
   var progress = 0;
@@ -8,7 +8,7 @@
     var uploadPage = $('#upload-page');
     uploadPage.hasClass('active-upload') ? uploadPage.removeClass('active-upload') : uploadPage.addClass('active-upload');
   }
-  
+
   $('div.top-menu > .upload, div.top-controls > .close').click(function (event) {
     toggleUploadPage();
   })
@@ -37,35 +37,23 @@
       var dropzone = $('#dropzone');
       var uploadIcon = $('.fa-upload');
       var dzPrompt = $('.dz-message');
+
+      var dzElements = { dropzone, uploadIcon, dzPrompt };
+
       var myDz = this;
 
       this.on('dragover', function () {
-        dropzone.css('border', '2px dashed #3eadf9');
-        dropzone.css('background-color', '#bfeaff');
-        uploadIcon.css('color', '#3eadf9');
-        uploadIcon.addClass('important-size-i');
-        dzPrompt.css('color', '#3eadf9');
-        dzPrompt.addClass('important-size-prompt');
+        view.dzAfter(dzElements);
       })
-      
+
       this.on('dragleave', function () {
-        dropzone.css('border', '2px dashed #a8a8a8');
-        dropzone.css('background-color', 'white');
-        uploadIcon.css('color', '#a8a8a8');
-        uploadIcon.removeClass('important-size-i');
-        dzPrompt.css('color', '#a8a8a8');
-        dzPrompt.removeClass('important-size-prompt');
+        view.dzBefore(dzElements);
       })
-      
+
       this.on('drop', function () {
-        dropzone.css('border', '2px dashed #a8a8a8');
-        dropzone.css('background-color', 'white');
-        uploadIcon.css('color', '#a8a8a8');
-        uploadIcon.removeClass('important-size-i');
-        dzPrompt.css('color', '#a8a8a8');
-        dzPrompt.removeClass('important-size-prompt');
+        view.dzBefore(dzElements);
       })
-      
+
       this.on('removedfile', function () {
         if (this.files.length === 0) {
           dropzone.css('height', '100%');
@@ -86,19 +74,19 @@
         postBody['year'] = eventYear;
         postBody['keywords'] = keywords;
       })
-      
+
       this.on('success', function (file, response) {
         myDz.processQueue();
 
         var filepath = response;
-        
+
         postBody['path'] = $.parseJSON(filepath);
 
         if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(postBody['path']) === true) {
           postBody['type'] = "image";
         }
 
-        $.post('api/media/create.php', postBody, function(res) {
+        $.post('api/media/create.php', postBody, function (res) {
           console.log(res);
         })
       })
