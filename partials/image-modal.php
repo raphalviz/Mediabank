@@ -18,7 +18,9 @@
                 </div>
               </div>
               <div id="opt-buttons">
-                <button type="button" class="btn btn-primary btn-dl"><i class="fa fa-download" aria-hidden="true"></i>DOWNLOAD</button>
+                <a class="dl-link" href="" download>
+                  <button type="button" class="btn btn-primary btn-dl"><i class="fa fa-download" aria-hidden="true"></i>DOWNLOAD</button>
+                </a>
               </div>
             </div>
           </div>
