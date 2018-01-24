@@ -50,9 +50,9 @@ var view = (function () {
     var modal = $(this);
 
     result = $.grep(state.currentData, function (e) { return e.MediaID == id })[0];
+    modal.css('display', 'flex !important');
     modal.find('.modal-img').attr('src', result['path']);
     modal.find('.dl-link').attr('href', result['path']);
-    // modal.find('.dl-link').attr('download', 'why.jpg');
   })
 
   // Dropzone styles for events

@@ -65,6 +65,9 @@
         progress = 0;
         myDz.processQueue();
 
+        $('#submit-dz').prop('disabled', true);
+        $('#submit-dz').addClass('btn-disabled');
+
         // TODO: Get text inputs for info and then send POST request
         eventName = document.getElementById('inputEvent').value;
         eventYear = document.getElementById('inputYear').value;
@@ -98,7 +101,8 @@
       })
 
       this.on('addedfile', function () {
-        $('#submit-dz').css('display', 'block');
+        $('#submit-dz').prop('disabled', false);
+        $('#submit-dz').removeClass('btn-disabled');
       })
     }
   }

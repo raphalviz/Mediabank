@@ -8,7 +8,7 @@
       <div id="preview-header">
         <div class="header-wrapper">
           <h3 id="swag">Queue</h3>
-          <button class="btn btn-primary" id="submit-dz">Begin Upload</button>
+          
         </div>
         <!-- <div class="progress">
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
@@ -34,6 +34,7 @@
             <label for="inputKeywords">Keywords</label>
             <input type="text" class="form-control" id="inputKeywords" aria-describedby="keywords" placeholder="Enter keywords">
           </div>
+          <button class="btn btn-primary btn-disabled" id="submit-dz" disabled>Begin Upload</button>
         </div>
       </div>
     </div>

@@ -261,6 +261,10 @@ i {
       #image-modal div.modal-body div.container .image-info .close {
         width: 14px;
         cursor: pointer; }
+    #image-modal div.modal-body div.container #info-content .year {
+      color: #8e8e8e; }
+    #image-modal div.modal-body div.container #info-content .modal-icons {
+      color: black; }
     #image-modal div.modal-body div.container .row {
       margin-left: 0 !important;
       margin-right: 0 !important; }
@@ -291,7 +295,7 @@ i {
     #upload-page .form-wrapper #previews {
       display: flex;
       flex-direction: column;
-      height: calc(100vh - 400px);
+      height: 80vh;
       width: 70%;
       max-width: 860px;
       margin-top: 30px;
@@ -316,8 +320,6 @@ i {
           display: inline-flex;
           justify-content: space-between;
           width: 100%; }
-          #upload-page .form-wrapper #previews #preview-header .header-wrapper #submit-dz {
-            display: none; }
       #upload-page .form-wrapper #previews #preview-list {
         display: flex;
         flex-direction: column;
@@ -357,6 +359,9 @@ i {
     overflow: scroll; }
   #upload-page #upload-info {
     flex: 1; }
+    #upload-page #upload-info #submit-dz {
+      width: 100%;
+      margin-top: 15px; }
 
 .active-upload {
   left: 0 !important;
@@ -434,3 +439,6 @@ div.dz-preview {
 
 .form-group {
   margin-bottom: 0 !important; }
+
+.btn-disabled {
+  cursor: not-allowed; }
