@@ -4,6 +4,20 @@ var view = (function () {
 
   var mediaGrid = document.getElementById('media-grid');
 
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+
   view.generateThumb = function (id, path) {
     var thumbPath = path.slice(0, 15) + 'thumbnails/' + path.slice(15, -4) + '_t' + path.slice(-4);
 
@@ -48,11 +62,16 @@ var view = (function () {
     var button = $(event.relatedTarget);
     var id = button.data('id');
     var modal = $(this);
-
+    var uploaded;
+    
     result = $.grep(state.currentData, function (e) { return e.MediaID == id })[0];
+    uploaded = new Date(result['uploaded']);
+
     modal.css('display', 'flex !important');
     modal.find('.modal-img').attr('src', result['path']);
     modal.find('.dl-link').attr('href', result['path']);
+
+    $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
   })
 
   // Dropzone styles for events

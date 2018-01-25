@@ -17,11 +17,13 @@
                 <div id="info-content">
                   <h4>Random Event</h4>
                   <h5 class="year">2017</h5>
-                  <i class="fa fa-calendar-plus-o modal-icons" aria-hidden="true"></i><span>January 24, 2018</span>
-                  <br>
-                  <i class="fa fa-users modal-icons" aria-hidden="true"></i><span>people</span>
-                  <br>
-                  <i class="fa fa-tags modal-icons" aria-hidden="true"></i><span>tags</span>
+                  <div id="sub-info-content">
+                    <i class="fa fa-calendar-plus-o modal-icons" aria-hidden="true"></i><span id="upload-date">January 24, 2018</span>
+                    <br>
+                    <i class="fa fa-users modal-icons" aria-hidden="true"></i><span id="people-tagged">people</span>
+                    <br>
+                    <i class="fa fa-tags modal-icons" aria-hidden="true"></i><span id="keywords-list">tags</span>
+                  </div>
                 </div>
               </div>
               <div id="opt-buttons">

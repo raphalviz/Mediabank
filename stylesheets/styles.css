@@ -265,6 +265,11 @@ i {
       color: #8e8e8e; }
     #image-modal div.modal-body div.container #info-content .modal-icons {
       color: black; }
+    #image-modal div.modal-body div.container #info-content #sub-info-content {
+      position: absolute;
+      max-height: 50%;
+      padding-right: 15px;
+      overflow: scroll; }
     #image-modal div.modal-body div.container .row {
       margin-left: 0 !important;
       margin-right: 0 !important; }

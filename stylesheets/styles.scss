@@ -399,6 +399,14 @@ i {
         .modal-icons {
           color: black;
         }
+        #sub-info-content {
+          position:absolute;
+
+          max-height: 50%;
+          padding-right: 15px;
+
+          overflow: scroll;
+        }
       }
 
       .row {
