@@ -36,4 +36,8 @@
     findAndUpdateState();
   })
 
+  document.addEventListener('onUploadSuccess', function (e) {
+    model.createMediaEntry(e.detail);
+  })
+
 }());

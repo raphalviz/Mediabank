@@ -89,9 +89,7 @@
           postBody['type'] = "image";
         }
 
-        $.post('api/media/create.php', postBody, function (res) {
-          console.log(res);
-        })
+        document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postBody }));
       })
 
       this.on('totaluploadprogress', function (response) {

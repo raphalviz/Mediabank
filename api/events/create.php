@@ -11,6 +11,8 @@ function createOne($db, $values) {
   $query = 'INSERT INTO Events(name, type) VALUES (?, ?)';
   $stmt = $db->prepare($query);
   $stmt->execute($values);
+
+  echo json_encode($db->lastInsertId());
 }
 
 createOne($db, array($_POST['name'], $_POST['type']));

@@ -4,7 +4,7 @@
     <div class="settings"><i class="fa fa-cog" aria-hidden="true"></i></div>
     <div class="upload">
       <div>
-        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> 
+        <i class="fa fa-upload" aria-hidden="true"></i> 
         <span>UPLOAD</span>
       </div>
     </div>
