@@ -15,7 +15,7 @@
                   </button>
                 </div>
                 <div id="info-content">
-                  <h4>Random Event</h4>
+                  <h4 id="info-title">Random Event</h4>
                   <h5 class="year">2017</h5>
                   <div id="sub-info-content">
                     <i class="fa fa-calendar-plus-o modal-icons" aria-hidden="true"></i><span id="upload-date">January 24, 2018</span>
