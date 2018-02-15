@@ -13,9 +13,11 @@
     })
   }
 
+  // Called when text in searchbar changes
   searchbar.addEventListener('input', function (e) {
     var results;
 
+    // Reset state if searchbar is cleared, otherwise search for the newly entered text
     if (searchbar.value === '') {
       findAndUpdateState();
     } else {

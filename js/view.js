@@ -71,6 +71,7 @@ var view = (function () {
     modal.find('.modal-img').attr('src', result['path']);
     modal.find('.dl-link').attr('href', result['path']);
 
+    $('#info-title')[0].innerHTML = result.EventID;
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
   })
 
