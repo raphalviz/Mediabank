@@ -3,6 +3,15 @@ var view = (function () {
   var view = {};
 
   var mediaGrid = document.getElementById('media-grid');
+  var btnEdit = document.getElementById('edit-button');
+  var btnCancelEdit = document.getElementById('cancel-edit-button');
+
+  var imageInfo = document.getElementById('image-modal-info');
+  var imageEdit = document.getElementById('image-modal-edit');
+
+  var inputEditEvent = document.getElementById('editEvent');
+  var inputEditYear = document.getElementById('editYear');
+  var inputEditKeywords = document.getElementById('editKeywords');
 
   var month = new Array();
   month[0] = "January";
@@ -18,6 +27,13 @@ var view = (function () {
   month[10] = "November";
   month[11] = "December";
 
+  /**
+   * Generates HTML for the thumbnails shown in the DOM
+   * 
+   * @param {string} id - string of id number representing a media
+   * @param {string} path - path to media file
+   * @returns {string} HTML for a media thumbnail
+   */
   view.generateThumb = function (id, path) {
     var thumbPath = path.slice(0, 15) + 'thumbnails/' + path.slice(15, -4) + '_t' + path.slice(-4);
 
@@ -38,6 +54,12 @@ var view = (function () {
     return template;
   }
 
+  /**
+   * Puts together all the HTML for the thumbnails that are to be displayed
+   * 
+   * @param {array} data - has objects representing media
+   * @return {string} Combined HTML of thumbnails for the entire display
+   */
   view.generateDisplay = function (data) {
     var template = ``;
     data.forEach(media => {
@@ -56,6 +78,31 @@ var view = (function () {
     document.dispatchEvent(new CustomEvent('onStartUp', { detail: {} }));
   }
 
+  /**
+   * Hides elements that are visible and displays
+   * elements that are not with mode displayMode
+   * 
+   * @param {iterable} elements
+   * @param {string} displayMode 
+   */
+  var toggleShow = function (elements, displayMode) {
+    elements.forEach(element => {
+      if (element.style.display === 'none') {
+        element.style.display = displayMode;
+      } else {
+        element.style.display = 'none';
+      }
+    });
+  }
+
+  btnEdit.onclick = function () {
+    toggleShow([imageEdit, imageInfo], 'flex');
+  }
+
+  btnCancelEdit.onclick = function () {
+    toggleShow([imageEdit, imageInfo], 'flex');
+  }
+
   // When magnifying glass on image is clicked:
   $('#image-modal').on('show.bs.modal', function (event) {
     var result;
@@ -63,7 +110,7 @@ var view = (function () {
     var id = button.data('id');
     var modal = $(this);
     var uploaded;
-    
+
     result = $.grep(state.currentData, function (e) { return e.MediaID == id })[0];
     uploaded = new Date(result['uploaded']);
 
@@ -71,7 +118,10 @@ var view = (function () {
     modal.find('.modal-img').attr('src', result['path']);
     modal.find('.dl-link').attr('href', result['path']);
 
-    $('#info-title')[0].innerHTML = result.EventID;
+    model.findEventById(result.EventID, function (res) {
+      $('#info-title')[0].innerHTML = res.name;
+      inputEditEvent.value = res.name;
+    })
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
   })
 
@@ -93,6 +143,6 @@ var view = (function () {
     e.dzPrompt.css('color', '#3eadf9');
     e.dzPrompt.addClass('important-size-prompt');
   }
-  
+
   return view;
 })();

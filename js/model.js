@@ -2,7 +2,7 @@
 var model = (function () {
   var model = {};
 
-  // Debouncer for functions
+  /* Debouncer for functions */
   function debounce(func, wait, immediate) {
     var timeout;
     return function () {
@@ -18,7 +18,7 @@ var model = (function () {
     };
   };
 
-  /* 
+  /** 
    * Finds media given keywords.  Triggered from search bar in the view
    * 
    * @param {string} keywords - Words to look for in the tags column in db
@@ -35,10 +35,10 @@ var model = (function () {
     })
   }
 
-  // Debounce to reduce requests made to server and changes to the DOM
+  /* Debounce to reduce requests made to server and changes to the DOM */
   model.searchByKeywords = debounce(keywordSearch, 250);
 
-  /* 
+  /** 
    * Find all media (Limit found in api).
    * Returns array of JSON where each JSON represents a specific media file
    * 
@@ -53,7 +53,7 @@ var model = (function () {
     })
   }
 
-  /* 
+  /** 
    * Check if an event with name eventName already exists, if it doesn't then create it 
    * otherwise return the ID of the event 
    * 
@@ -73,7 +73,7 @@ var model = (function () {
     })
   }
 
-  /*
+  /**
    * Searches the events table for an entry with corresponding ID
    * 
    * @param {string} eid - Stringified integer that corresponds to an event's ID
@@ -87,7 +87,7 @@ var model = (function () {
     })
   }
 
-  /*
+  /**
    * Calls to the api to create a new media entry in the media table
    * 
    * @param {object} postBody - The body of the post request

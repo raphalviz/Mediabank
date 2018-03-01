@@ -229,6 +229,9 @@ i {
   filter: opacity(70%);
   margin: 7px; }
 
+#image-modal i {
+  filter: opacity(100%) !important; }
+
 #image-modal img {
   width: 100%; }
 
@@ -244,6 +247,7 @@ i {
     #image-modal div.modal-body div.container .btn-dl {
       width: 100%;
       letter-spacing: 1px;
+      font-weight: 200;
       background-color: #4bb580;
       border: none;
       cursor: pointer; }
@@ -254,7 +258,8 @@ i {
       padding: 0 !important;
       background-color: black; }
     #image-modal div.modal-body div.container .image-info {
-      padding: 15px !important;
+      padding: 15px 0 !important;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
@@ -265,11 +270,15 @@ i {
       color: #8e8e8e; }
     #image-modal div.modal-body div.container #info-content .modal-icons {
       color: black; }
+    #image-modal div.modal-body div.container #info-content .option-btns {
+      display: flex; }
     #image-modal div.modal-body div.container #info-content #sub-info-content {
       position: absolute;
       max-height: 50%;
       padding-right: 15px;
-      overflow: scroll; }
+      margin-top: 7px;
+      overflow: scroll;
+      font-weight: 200; }
     #image-modal div.modal-body div.container .row {
       margin-left: 0 !important;
       margin-right: 0 !important; }
@@ -447,3 +456,31 @@ div.dz-preview {
 
 .btn-disabled {
   cursor: not-allowed; }
+
+.btn-short {
+  padding: 0 !important; }
+
+.btn-edit {
+  flex: 1;
+  margin-right: 7px;
+  font-weight: 200; }
+
+.btn-save {
+  width: 100%;
+  margin-right: 7px; }
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px 0; }
+
+.edit-form {
+  display: flex;
+  flex-direction: column; }
+
+#edit-buttons {
+  display: flex; }
+  #edit-buttons button {
+    font-weight: 200; }

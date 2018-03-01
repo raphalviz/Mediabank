@@ -343,6 +343,10 @@ i {
 
 #image-modal {
 
+  i {
+    filter: opacity(100%) !important;
+  }
+
   img {
     width: 100%;
   }
@@ -362,6 +366,7 @@ i {
       .btn-dl {
         width: 100%;
         letter-spacing: 1px;
+        font-weight: 200;
 
         background-color: $dlgreen;
         border: none;
@@ -379,8 +384,9 @@ i {
       }
 
       .image-info{
-        padding: 15px !important;
-        
+        padding: 15px 0 !important;
+        height: 100%;
+
         display: flex;
 
         flex-direction: column;
@@ -399,13 +405,18 @@ i {
         .modal-icons {
           color: black;
         }
+        .option-btns {
+          display: flex;
+        }
         #sub-info-content {
           position:absolute;
 
           max-height: 50%;
           padding-right: 15px;
+          margin-top: 7px;
 
           overflow: scroll;
+          font-weight: 200;
         }
       }
 
@@ -667,9 +678,39 @@ div.dz-preview {
   cursor: not-allowed;
 }
 
-// .show {
-//   display: flex !important;
-//   align-items: center;
-// }
+.btn-short {
+  padding: 0 !important;
+}
 
+.btn-edit {
+  flex: 1;
+  margin-right: 7px;
+  font-weight: 200;
+}
 
+.btn-save {
+  width: 100%;
+  margin-right: 7px;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  padding: 15px 0;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-buttons {
+  display: flex;
+
+  button {
+    font-weight: 200;
+  }
+}
