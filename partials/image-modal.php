@@ -18,7 +18,7 @@
                   </div>
                   <div id="info-content">
                     <h4 id="info-title">Random Event</h4>
-                    <h5 class="year">2017</h5>
+                    <h5 id="info-year" class="year">2017</h5>
                     <div class="option-btns">
                       <button id="edit-button" type="button" class="btn btn-secondary btn-short btn-edit"><i class="fa fa-edit"></i>EDIT</button>
                       <button type="button" class="btn btn-danger btn-short"><i class="fa fa-trash"></i></button>

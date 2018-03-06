@@ -2,6 +2,8 @@
 var state = (function () {
   var state = {
     currentData: [],
+    mediaShowing: false,
+    currentMedia: {},
     searchIsLoading: false
   };
 
@@ -18,6 +20,10 @@ var state = (function () {
     state.currentData = [];
     document.dispatchEvent(new CustomEvent('onDataStateCleared', { detail: {} }));
     document.dispatchEvent(new CustomEvent('onDataStateChanged', { detail: state.currentData }));
+  }
+
+  state.mediaShown = function (mediaInfo) {
+    state.currentMedia = mediaInfo;
   }
 
   return state;

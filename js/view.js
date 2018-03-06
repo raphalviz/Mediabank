@@ -112,6 +112,7 @@ var view = (function () {
     var uploaded;
 
     result = $.grep(state.currentData, function (e) { return e.MediaID == id })[0];
+    document.dispatchEvent(new CustomEvent('onModalShow', { detail: result }));
     uploaded = new Date(result['uploaded']);
 
     modal.css('display', 'flex !important');
@@ -122,7 +123,16 @@ var view = (function () {
       $('#info-title')[0].innerHTML = res.name;
       inputEditEvent.value = res.name;
     })
+    inputEditYear.value = result['year'];
+    inputEditKeywords.value = result['keywords'];
+    $('#info-year')[0].innerHTML = result['year'];
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
+  })
+
+  $('#image-modal').on('hidden.bs.modal', function (event) {
+    if (imageEdit.style.display != 'none') {
+      toggleShow([imageEdit, imageInfo], 'flex');
+    }
   })
 
   // Dropzone styles for events

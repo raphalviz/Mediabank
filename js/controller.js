@@ -42,4 +42,8 @@
     model.createMediaEntry(e.detail);
   })
 
+  document.addEventListener('onModalShow', function (e) {
+    state.mediaShown(e.detail);
+  })
+
 }());

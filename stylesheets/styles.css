@@ -273,7 +273,6 @@ i {
     #image-modal div.modal-body div.container #info-content .option-btns {
       display: flex; }
     #image-modal div.modal-body div.container #info-content #sub-info-content {
-      position: absolute;
       max-height: 50%;
       padding-right: 15px;
       margin-top: 7px;
