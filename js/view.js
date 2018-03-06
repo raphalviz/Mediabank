@@ -4,7 +4,9 @@ var view = (function () {
 
   var mediaGrid = document.getElementById('media-grid');
   var btnEdit = document.getElementById('edit-button');
+  var btnDelete = document.getElementById('delete-button');
   var btnCancelEdit = document.getElementById('cancel-edit-button');
+  var btnSaveEdit = document.getElementById('save-edit-button');
 
   var imageInfo = document.getElementById('image-modal-info');
   var imageEdit = document.getElementById('image-modal-edit');
@@ -95,12 +97,18 @@ var view = (function () {
     });
   }
 
-  btnEdit.onclick = function () {
+  var toggleShowEdit = function () {
     toggleShow([imageEdit, imageInfo], 'flex');
   }
 
+  view.toggleShowEdit = toggleShowEdit;
+
+  btnEdit.onclick = function () {
+    toggleShowEdit();
+  }
+
   btnCancelEdit.onclick = function () {
-    toggleShow([imageEdit, imageInfo], 'flex');
+    toggleShowEdit();
   }
 
   // When magnifying glass on image is clicked:
@@ -127,12 +135,28 @@ var view = (function () {
     inputEditKeywords.value = result['keywords'];
     $('#info-year')[0].innerHTML = result['year'];
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
+
+    btnDelete.onclick = function () {
+      document.dispatchEvent(new CustomEvent('onMediaDelete', { detail: result }))
+    }
+
+    btnSaveEdit.onclick = function () {
+      var editedData = {
+        event: inputEditEvent.value,
+        year: inputEditYear.value,
+        keywords: inputEditKeywords.value,
+        MediaID: result['MediaID']
+      }
+      console.log("Following data has been sent: ", editedData);
+      document.dispatchEvent(new CustomEvent('onEditSent', { detail: editedData }));
+    }
   })
 
   $('#image-modal').on('hidden.bs.modal', function (event) {
     if (imageEdit.style.display != 'none') {
       toggleShow([imageEdit, imageInfo], 'flex');
     }
+    document.dispatchEvent(new CustomEvent('onModalClose'), { detail: {} });
   })
 
   // Dropzone styles for events

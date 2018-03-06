@@ -21,7 +21,7 @@
                     <h5 id="info-year" class="year">2017</h5>
                     <div class="option-btns">
                       <button id="edit-button" type="button" class="btn btn-secondary btn-short btn-edit"><i class="fa fa-edit"></i>EDIT</button>
-                      <button type="button" class="btn btn-danger btn-short"><i class="fa fa-trash"></i></button>
+                      <button id="delete-button" type="button" class="btn btn-danger btn-short"><i class="fa fa-trash"></i></button>
                     </div>
                     <div id="sub-info-content">
                       <i class="fa fa-calendar-plus-o modal-icons" aria-hidden="true"></i><span id="upload-date">January 24, 2018</span>
@@ -62,7 +62,7 @@
                   </form>
                 </div>
                 <div id="edit-buttons">
-                  <button type="button" class="btn btn-primary btn-save"><i class="fa fa-save" aria-hidden="true"></i>Save</button>
+                  <button id="save-edit-button" ype="button" class="btn btn-primary btn-save"><i class="fa fa-save" aria-hidden="true"></i>Save</button>
                   <button id="cancel-edit-button" type="button" class="btn btn-secondary">Cancel</button>
                 </div>
               </div>

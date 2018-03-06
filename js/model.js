@@ -101,5 +101,33 @@ var model = (function () {
     });
   }
 
+  /**
+   * Calls to the api to update an existing entry
+   * 
+   * @param postBody - The body of the post request
+   */
+  model.updateMediaEntry = function (postBody) {
+    checkEvent(postBody['event'], function (EventID) {
+      postBody.EventID = EventID;
+      $.post('api/media/update.php', postBody, function (res) {
+        console.log(res);
+        if (res != "Failed") {
+          document.dispatchEvent(new CustomEvent('onEditSuccess', { detail: {} }));
+        }
+      })
+    })
+  }
+
+  /**
+   * Calls to the api to delete an existing entry
+   * 
+   * @param {MediaID} MediaID - Id of media to be deleted
+   */
+  model.deleteMedia = function (MediaID) {
+    $.post('api/media/delete.php', { MediaID: MediaID }, function (res) {
+      console.log(res);
+    })
+  }
+
   return model;
 })();

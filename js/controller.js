@@ -43,7 +43,24 @@
   })
 
   document.addEventListener('onModalShow', function (e) {
-    state.mediaShown(e.detail);
+    state.mediaOpened(e.detail);
+  })
+
+  document.addEventListener('onModalClose', function (e) {
+    state.mediaClosed();
+  })
+
+  document.addEventListener('onEditSent', function (e) {
+    model.updateMediaEntry(e.detail);
+  })
+
+  document.addEventListener('onEditSuccess', function (e) {
+    view.toggleShowEdit();
+    // TODO
+  })
+
+  document.addEventListener('onMediaDelete', function (e) {
+    model.deleteMedia(e.detail['MediaID']);
   })
 
 }());

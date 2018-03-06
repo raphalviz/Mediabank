@@ -2,7 +2,7 @@
 var state = (function () {
   var state = {
     currentData: [],
-    mediaShowing: false,
+    modalShowing: false,
     currentMedia: {},
     searchIsLoading: false
   };
@@ -16,14 +16,29 @@ var state = (function () {
     document.dispatchEvent(new CustomEvent('onDataStateChanged', { detail: state.currentData }));
   }
 
+  state.editState = function (entry) {
+    var indexToEdit = $.map(list, function(obj, index) {
+      if(obj.MediaID == entry.MediaID) {
+          return index;
+      }
+    })
+    // TODO
+  }
+
   state.clearState = function () {
     state.currentData = [];
     document.dispatchEvent(new CustomEvent('onDataStateCleared', { detail: {} }));
     document.dispatchEvent(new CustomEvent('onDataStateChanged', { detail: state.currentData }));
   }
 
-  state.mediaShown = function (mediaInfo) {
+  state.mediaOpened = function (mediaInfo) {
+    state.modalShowing = true;
     state.currentMedia = mediaInfo;
+  }
+
+  state.mediaClosed = function () {
+    state.modalShowing = false;
+    state.currentMedia = {};
   }
 
   return state;
