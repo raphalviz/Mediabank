@@ -1,6 +1,4 @@
 <?php
-  require_once("db.php");
-
   $ds = DIRECTORY_SEPARATOR;
   $FOLDER_LIMIT = 65000;
 

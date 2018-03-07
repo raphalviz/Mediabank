@@ -7,6 +7,14 @@ include_once '../db.php';
 $database = new Database();
 $db = $database->getConnection();
 
+function deleteFile($db, $id) {
+	$query = 'SELECT * FROM Media WHERE MediaID = ?';
+	$stmt = $db->prepare($query);
+	$stmt->execute([$id]);
+	$result = $stmt->fetch(PDO::FETCH_ASSOC);
+	unlink($_SERVER['DOCUMENT_ROOT'].'/aacc-gallery/'.$result['path']);
+}
+
 function deleteOne($db, $values) {
 	$query = 'DELETE FROM Media WHERE MediaID = ?';
 	$stmt = $db->prepare($query);
@@ -18,5 +26,6 @@ function deleteOne($db, $values) {
 }
 
 /* IMPORTANT TODO: authentication */
+deleteFile($db, $_POST['MediaID']);
 deleteOne($db, array($_POST['MediaID']));
 ?>
