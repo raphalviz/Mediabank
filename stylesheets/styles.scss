@@ -34,7 +34,6 @@ body {
   position: relative;
   display: flex;
 
-  // min-height: calc(100vh - 56px);
   min-height: 100vh;
   width: 100%;
 }
@@ -60,6 +59,13 @@ body {
 
     background-color: #858e98;
     color: white;
+
+    i {
+      color: #fff !important;
+      font-size: 50px !important;
+      filter: opacity(70%);
+      margin: 7px;
+    }
 
     .home {
       @include main-icons(1, #0071d4);
@@ -428,19 +434,37 @@ i {
   }
 }
 
+#image-modal-delete {
+  display: none;
+
+  .delete-btn-group {
+    display: flex;
+
+    button {
+      flex: 1;
+      font-weight: 200;
+    }
+
+    #cancel-delete-btn {
+      margin-left: 7px;
+    }
+  }
+}
+
 #upload-page {
-  position: absolute;
+  position: fixed;
   display: flex;
 
   flex-direction: column;
 
   min-height: 100%;
-  width: 100%;
+  width: calc(100% - 300px);
 
+  margin-left: 300px;
   padding: 15px 30px 30px 30px;
 
   top: 0;
-  left: -100%;
+  left: calc(-100% + 300px);
   z-index: 2;
 
   transition: all .37s cubic-bezier(0.17, 0.04, 0.03, 0.94);

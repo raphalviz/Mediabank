@@ -30,6 +30,14 @@
                       <br>
                       <i class="fa fa-tags modal-icons" aria-hidden="true"></i><span id="keywords-list">tags</span>
                     </div>
+                    <!-- Delete confirmation -->
+                    <div id="image-modal-delete">
+                      <span>Permanently delete file?</span>
+                      <div class="delete-btn-group">
+                        <button id="confirm-delete-btn" class="btn btn-danger btn-short">Delete</button>
+                        <button id="cancel-delete-btn" class="btn btn-secondary btn-short">Cancel</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div id="opt-buttons">

@@ -7,9 +7,15 @@ var view = (function () {
   var btnDelete = document.getElementById('delete-button');
   var btnCancelEdit = document.getElementById('cancel-edit-button');
   var btnSaveEdit = document.getElementById('save-edit-button');
+  var btnConfirmDelete = document.getElementById('confirm-delete-btn');
+  var btnCancelDelete = document.getElementById('cancel-delete-btn');
 
   var imageInfo = document.getElementById('image-modal-info');
   var imageEdit = document.getElementById('image-modal-edit');
+  var imageDelete = document.getElementById('image-modal-delete');
+
+  var divOptButtons = document.getElementsByClassName('option-btns')[0];
+  var divSubInfo = document.getElementById('sub-info-content');
 
   var inputEditEvent = document.getElementById('editEvent');
   var inputEditYear = document.getElementById('editYear');
@@ -137,6 +143,17 @@ var view = (function () {
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
 
     btnDelete.onclick = function () {
+      toggleShow([divSubInfo, divOptButtons], 'none');
+      imageDelete.style.display = 'block';
+    }
+
+    btnCancelDelete.onclick = function () {
+      toggleShow([divOptButtons], 'flex');
+      toggleShow([divSubInfo], 'block');
+      toggleShow([imageDelete], 'none');
+    }
+    
+    btnConfirmDelete.onclick = function () {
       document.dispatchEvent(new CustomEvent('onMediaDelete', { detail: result }))
     }
 

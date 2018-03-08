@@ -25,6 +25,11 @@ body {
     height: 57px;
     background-color: #858e98;
     color: white; }
+    #sidebar .top-menu i {
+      color: #fff !important;
+      font-size: 50px !important;
+      filter: opacity(70%);
+      margin: 7px; }
     #sidebar .top-menu .home {
       display: flex;
       justify-content: center;
@@ -282,15 +287,26 @@ i {
       margin-left: 0 !important;
       margin-right: 0 !important; }
 
+#image-modal-delete {
+  display: none; }
+  #image-modal-delete .delete-btn-group {
+    display: flex; }
+    #image-modal-delete .delete-btn-group button {
+      flex: 1;
+      font-weight: 200; }
+    #image-modal-delete .delete-btn-group #cancel-delete-btn {
+      margin-left: 7px; }
+
 #upload-page {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  width: 100%;
+  width: calc(100% - 300px);
+  margin-left: 300px;
   padding: 15px 30px 30px 30px;
   top: 0;
-  left: -100%;
+  left: calc(-100% + 300px);
   z-index: 2;
   transition: all 0.37s cubic-bezier(0.17, 0.04, 0.03, 0.94);
   background-color: rgba(0, 0, 0, 0.37); }
