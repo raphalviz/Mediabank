@@ -19,7 +19,7 @@ function findById($db, $id) {
 }
 
 function findAll($db) {
-  $query = 'SELECT * FROM Media LIMIT 30';
+  $query = 'SELECT * FROM Media LIMIT 50';
   $stmt = $db->prepare($query);
   $stmt->execute();
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

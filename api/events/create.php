@@ -15,6 +15,9 @@ function createOne($db, $values) {
   echo json_encode($db->lastInsertId());
 }
 
-createOne($db, array($_POST['name'], $_POST['type']));
+createOne($db, array(
+  htmlspecialchars($_POST['name']), 
+  htmlspecialchars($_POST['type'])
+));
 
 ?>

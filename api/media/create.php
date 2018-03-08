@@ -17,5 +17,12 @@ function createOne($db, $values) {
   }
 }
 
-createOne($db, array($_POST['path'], $_POST['year'], $_POST['EventID'], $_POST['type'], date('Y-m-d H:i:s'), $_POST['keywords']));
+createOne($db, array(
+  htmlspecialchars($_POST['path']), 
+  htmlspecialchars($_POST['year']), 
+  $_POST['EventID'], 
+  htmlspecialchars($_POST['type']), 
+  date('Y-m-d H:i:s'), 
+  htmlspecialchars($_POST['keywords'])
+));
 ?>

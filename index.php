@@ -13,5 +13,7 @@
   </div>
 <?php 
   include "partials/image-modal.php";
+  // TODO: Progress bar
+  // include "partials/progress.php";
   include "partials/footer.php";
 ?>

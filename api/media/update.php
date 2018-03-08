@@ -18,9 +18,9 @@ function updateOne($db, $values) {
 }
 
 updateOne($db, array(
-  $_POST['EventID'], 
+  htmlspecialchars($_POST['EventID']), 
   (int)$_POST['year'], 
-  $_POST['keywords'], 
-  $_POST['MediaID']
+  htmlspecialchars($_POST['keywords']), 
+  htmlspecialchars($_POST['MediaID'])
 ));
 ?>
