@@ -349,6 +349,9 @@ i {
           display: inline-flex;
           justify-content: space-between;
           width: 100%; }
+          #upload-page .form-wrapper #previews #preview-header .header-wrapper .close {
+            padding-top: 3px;
+            cursor: pointer; }
       #upload-page .form-wrapper #previews #preview-list {
         display: flex;
         flex-direction: column;

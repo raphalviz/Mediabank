@@ -9,9 +9,27 @@
     uploadPage.hasClass('active-upload') ? uploadPage.removeClass('active-upload') : uploadPage.addClass('active-upload');
   }
 
-  $('div.top-menu > .upload, div.top-controls > .close').click(function (event) {
+  $('div.top-menu > .upload, div.header-wrapper > .close').click(function (event) {
     toggleUploadPage();
   })
+
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-left",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
 
   Dropzone.options.dropzone = {
     addRemoveLinks: true,
@@ -75,14 +93,14 @@
 
         postBody['event'] = eventName;
         postBody['year'] = eventYear;
-        postBody['keywords'] = keywords;
+        postBody['keywords'] = keywords + " " + eventName;
       })
 
       this.on('success', function (file, response) {
         myDz.processQueue();
 
         var filepath = response;
-
+        console.log(filepath);
         postBody['path'] = $.parseJSON(filepath);
 
         if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(postBody['path']) === true) {
@@ -90,6 +108,7 @@
         }
 
         document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postBody }));
+        this.removeFile(file);
       })
 
       this.on('totaluploadprogress', function (response) {
@@ -101,6 +120,11 @@
       this.on('addedfile', function () {
         $('#submit-dz').prop('disabled', false);
         $('#submit-dz').removeClass('btn-disabled');
+      })
+
+      this.on('queuecomplete', function () {
+        toggleUploadPage();
+        toastr.success('Success!', 'Your upload has completed.');
       })
     }
   }
