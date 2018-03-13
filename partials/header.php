@@ -1,3 +1,6 @@
+<?php
+  include "sessions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,4 +23,6 @@
   </head>
   <body>
     <div id="main">
-      <?php include "generators.php"; ?>
+      <?php 
+        include "generators.php"; 
+      ?>

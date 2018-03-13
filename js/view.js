@@ -154,6 +154,10 @@ var view = (function () {
     }
     
     btnConfirmDelete.onclick = function () {
+      toggleShow([divOptButtons], 'flex');
+      toggleShow([divSubInfo], 'block');
+      toggleShow([imageDelete], 'none');
+      $('#image-modal').modal('toggle');
       document.dispatchEvent(new CustomEvent('onMediaDelete', { detail: result }))
     }
 
