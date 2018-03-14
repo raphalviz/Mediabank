@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+include_once '../auth.php';
 include_once '../db.php';
 
 $database = new Database();
@@ -25,7 +26,11 @@ function deleteOne($db, $values) {
 	}
 }
 
-/* IMPORTANT TODO: authentication */
-deleteFile($db, $_POST['MediaID']);
-deleteOne($db, array($_POST['MediaID']));
+if (isAuth() == TRUE) {
+	deleteFile($db, $_POST['MediaID']);
+	deleteOne($db, array($_POST['MediaID']));
+} else {
+	http_response_code(401);
+	echo json_encode('Unauthorized');
+}
 ?>

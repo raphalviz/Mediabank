@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+include_once '../auth.php';
 include_once '../db.php';
 
 $database = new Database();
@@ -17,10 +18,15 @@ function updateOne($db, $values) {
   }
 }
 
-updateOne($db, array(
-  htmlspecialchars($_POST['EventID']), 
-  (int)$_POST['year'], 
-  htmlspecialchars($_POST['keywords']), 
-  htmlspecialchars($_POST['MediaID'])
-));
+if (isAuth() == TRUE) {
+  updateOne($db, array(
+    htmlspecialchars($_POST['EventID']), 
+    (int)$_POST['year'], 
+    htmlspecialchars($_POST['keywords']), 
+    htmlspecialchars($_POST['MediaID'])
+  ));
+} else {
+  http_response_code(401);
+  echo json_encode('Unauthorized');
+}
 ?>

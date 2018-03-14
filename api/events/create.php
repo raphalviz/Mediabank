@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+include_once '../auth.php';
 include_once '../db.php';
 
 $database = new Database();
@@ -15,9 +16,14 @@ function createOne($db, $values) {
   echo json_encode($db->lastInsertId());
 }
 
-createOne($db, array(
-  htmlspecialchars($_POST['name']), 
-  htmlspecialchars($_POST['type'])
-));
+if (isAuth() == TRUE) {
+  createOne($db, array(
+    htmlspecialchars($_POST['name']), 
+    htmlspecialchars($_POST['type'])
+  ));
+} else {
+  http_response_code(401);
+  echo json_encode('Unauthorized');
+}
 
 ?>
