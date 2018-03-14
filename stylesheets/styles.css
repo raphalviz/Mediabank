@@ -155,6 +155,7 @@ body {
   justify-content: space-between;
   margin: 40px; }
   .ct.pictures .row .card {
+    max-height: 170px;
     height: 100%; }
     .ct.pictures .row .card .card-body {
       padding: 7px 15px; }
@@ -166,6 +167,7 @@ body {
       height: 100%;
       width: auto; }
       .ct.pictures .row .card .crop img {
+        object-fit: cover;
         height: 100%; }
   .ct.pictures .row > div {
     margin-bottom: 20px; }
