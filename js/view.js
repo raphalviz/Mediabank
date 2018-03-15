@@ -51,7 +51,7 @@ var view = (function () {
           <div class="overlay">
             <a href="${path}" download><i class="fa fa-download" aria-hidden="true"></i></a>
             <i id="img-${id}" class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#image-modal" data-id="${id}"></i>
-            <div style="position: absolute; width: 100%; height: 100%; z-index: -1;" data-toggle="modal" data-target="#image-modal" data-id="${id}"></div>
+            <div style="position: absolute; cursor: pointer; width: 100%; height: 100%; z-index: -1;" data-toggle="modal" data-target="#image-modal" data-id="${id}"></div>
           </div>
           <div class="crop">
             <img class="card-img grow" src="${thumbPath}" alt="Card image cap">
@@ -142,6 +142,7 @@ var view = (function () {
     inputEditKeywords.value = result['keywords'];
     $('#info-year')[0].innerHTML = result['year'];
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
+    // $('#keywords-list')[0].innerHTML = result['keywords'];
 
     btnDelete.onclick = function () {
       toggleShow([divSubInfo, divOptButtons], 'none');
