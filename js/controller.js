@@ -17,17 +17,12 @@
   searchbar.addEventListener('input', function (e) {
     var results;
 
-    // Reset state if searchbar is cleared, otherwise search for the newly entered text
-    if (searchbar.value === '') {
-      findAndUpdateState();
-    } else {
-      state.searchIsLoading = true;
-      model.searchByKeywords(searchbar.value, function (res) {
-        results = res;
-        state.updateState(results);
-        state.searchIsLoading = false;
-      })
-    }
+    state.searchIsLoading = true;
+    model.searchByKeywords(searchbar.value, function (res) {
+      results = res;
+      state.updateState(results);
+      state.searchIsLoading = false;
+    })
   })
 
   document.addEventListener('onDataStateChanged', function (e) {

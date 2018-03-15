@@ -30,13 +30,20 @@ var model = (function () {
 
     url = url + query;
 
-    $.get(url, function (res) {
-      callback(res);
-    })
+    if (keywords !== '') {
+      $.get(url, function (res) {
+        callback(res);
+      })
+    } else {
+      model.findall(function (res) {
+        callback(res);
+      });
+    }
   }
 
   /* Debounce to reduce requests made to server and changes to the DOM */
   model.searchByKeywords = debounce(keywordSearch, 250);
+  model.searchCleared = keywordSearch;
 
   /** 
    * Find all media (Limit found in api).
@@ -97,6 +104,8 @@ var model = (function () {
       postBody.EventID = EventID;
       $.post('api/media/create.php', postBody, function (res) {
         console.log(res);
+        console.log("POST with:");
+        console.log(postBody);
       })
     });
   }
