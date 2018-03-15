@@ -138,5 +138,11 @@ var model = (function () {
     })
   }
 
+  model.getPeopleTagged = function (MediaID, callback) {
+    $.get('api/people/read.php?mediaid=' + MediaID, function (res) {
+      callback(res);
+    })
+  }
+
   return model;
 })();

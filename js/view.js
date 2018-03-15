@@ -124,6 +124,7 @@ var view = (function () {
     var button = $(event.relatedTarget);
     var id = button.data('id');
     var modal = $(this);
+    var peopleTagged = $('#people-tagged')[0];
     var uploaded;
 
     result = $.grep(state.currentData, function (e) { return e.MediaID == id })[0];
@@ -138,6 +139,16 @@ var view = (function () {
       $('#info-title')[0].innerHTML = res.name;
       inputEditEvent.value = res.name;
     })
+
+    model.getPeopleTagged(result.MediaID, function (res) {
+      var tags = '';
+      res.forEach(function (person) {
+        tags += person.firstname + " " + person.lastname + ", ";
+      })
+      tags = tags.substring(0, tags.length - 2);
+      peopleTagged.innerHTML = tags;
+    })
+
     inputEditYear.value = result['year'];
     inputEditKeywords.value = result['keywords'];
     $('#info-year')[0].innerHTML = result['year'];
