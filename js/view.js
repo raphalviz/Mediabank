@@ -51,6 +51,7 @@ var view = (function () {
           <div class="overlay">
             <a href="${path}" download><i class="fa fa-download" aria-hidden="true"></i></a>
             <i id="img-${id}" class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#image-modal" data-id="${id}"></i>
+            <div style="position: absolute; width: 100%; height: 100%; z-index: -1;" data-toggle="modal" data-target="#image-modal" data-id="${id}"></div>
           </div>
           <div class="crop">
             <img class="card-img grow" src="${thumbPath}" alt="Card image cap">
