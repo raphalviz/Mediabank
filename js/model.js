@@ -102,11 +102,18 @@ var model = (function () {
   model.createMediaEntry = function (postBody) {
     checkEvent(postBody['event'], function (EventID) {
       postBody.EventID = EventID;
+      console.log(postBody);
       $.post('api/media/create.php', postBody, function (res) {
         console.log(res);
-        console.log("POST with:");
-        console.log(postBody);
+        // console.log("POST with:");
+        // console.log(postBody);
       })
+    });
+  }
+
+  model.createMediaEntries = function (postArray) {
+    postArray.forEach(element => {
+      model.createMediaEntry(element);
     });
   }
 

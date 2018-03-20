@@ -2,6 +2,7 @@
 (function () {
   var displayedData;
   var postBody = {};
+  var postArray = [];
   var progress = 0;
 
   var toggleUploadPage = function () {
@@ -79,6 +80,7 @@
       })
 
       $('#submit-dz').on('click', function (e) {
+        postArray = [];
         var eventName, eventYear, keywords;
         progress = 0;
         myDz.processQueue();
@@ -107,7 +109,15 @@
           postBody['type'] = "image";
         }
 
-        document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postBody }));
+        var newBody = {
+          event: postBody['event'],
+          year: postBody['year'],
+          keywords: postBody['keywords'],
+          path: postBody['path'],
+          type: postBody['type']
+        }
+        // document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postBody }));
+        postArray.push(newBody);
         this.removeFile(file);
       })
 
@@ -123,6 +133,7 @@
       })
 
       this.on('queuecomplete', function () {
+        document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postArray }));
         toggleUploadPage();
         toastr.success('Success!', 'Your upload has completed.');
       })

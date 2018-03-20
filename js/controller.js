@@ -33,8 +33,11 @@
     findAndUpdateState();
   })
 
+  // document.addEventListener('onUploadSuccess', function (e) {
+  //   model.createMediaEntry(e.detail);
+  // })
   document.addEventListener('onUploadSuccess', function (e) {
-    model.createMediaEntry(e.detail);
+    model.createMediaEntries(e.detail);
   })
 
   document.addEventListener('onModalShow', function (e) {
