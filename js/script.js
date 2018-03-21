@@ -14,23 +14,27 @@
     toggleUploadPage();
   })
 
-  toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-bottom-left",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
+  var resetToastr = function () {
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-bottom-left",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
   }
+
+  resetToastr();
 
   Dropzone.options.dropzone = {
     addRemoveLinks: true,
@@ -96,6 +100,26 @@
         postBody['event'] = eventName;
         postBody['year'] = eventYear;
         postBody['keywords'] = keywords + " " + eventName;
+
+        toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": true,
+          "positionClass": "toast-bottom-left",
+          "preventDuplicates": false,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "0",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+
+        toastr.info("Upload in Progress...", "0%");
       })
 
       this.on('success', function (file, response) {
@@ -124,6 +148,10 @@
       this.on('totaluploadprogress', function (response) {
         progress <= response ? progress = response : progress;
         console.log(progress);
+        var toastTitle = $('.toast-title')[0];
+
+        $('.toast-title')[0].innerHTML = "Upload in Progress..."
+        $('.toast-message')[0].innerHTML = parseInt(progress) + '%';
         // $('.progress-bar').width(progress + '%');
       })
 
@@ -133,8 +161,10 @@
       })
 
       this.on('queuecomplete', function () {
+        toastr.clear();
         document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postArray }));
         toggleUploadPage();
+        resetToastr();
         toastr.success('Success!', 'Your upload has completed.');
       })
     }
