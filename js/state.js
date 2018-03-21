@@ -4,7 +4,8 @@ var state = (function () {
     currentData: [],
     modalShowing: false,
     currentMedia: {},
-    searchIsLoading: false
+    searchIsLoading: false,
+    uploadFormShowing: false
   };
 
   state.printState = function () {

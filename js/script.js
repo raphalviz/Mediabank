@@ -8,6 +8,8 @@
   var toggleUploadPage = function () {
     var uploadPage = $('#upload-page');
     uploadPage.hasClass('active-upload') ? uploadPage.removeClass('active-upload') : uploadPage.addClass('active-upload');
+    state.uploadFormShowing = !state.uploadFormShowing;
+    console.log(state.uploadFormShowing);
   }
 
   $('div.top-menu > .upload, div.header-wrapper > .close').click(function (event) {
@@ -40,6 +42,7 @@
     addRemoveLinks: true,
     autoProcessQueue: false,
     maxFiles: 50,
+    parallelUploads: 1,
     previewsContainer: '#queue-previews',
     previewTemplate: `
       <div class="dz-preview dz-file-preview">
@@ -163,7 +166,9 @@
       this.on('queuecomplete', function () {
         toastr.clear();
         document.dispatchEvent(new CustomEvent('onUploadSuccess', { detail: postArray }));
-        toggleUploadPage();
+        if (state.uploadFormShowing === true) {
+          toggleUploadPage();
+        }
         resetToastr();
         toastr.success('Success!', 'Your upload has completed.');
       })
