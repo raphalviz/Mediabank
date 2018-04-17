@@ -21,6 +21,9 @@ var view = (function () {
   var inputEditYear = document.getElementById('editYear');
   var inputEditKeywords = document.getElementById('editKeywords');
 
+  var yearsList = document.getElementById('years-list');
+  var eventsList = document.getElementById('events-list');
+
   var month = new Array();
   month[0] = "January";
   month[1] = "February";
@@ -85,6 +88,61 @@ var view = (function () {
   view.startupDisplay = function () {
     state.clearState();
     document.dispatchEvent(new CustomEvent('onStartUp', { detail: {} }));
+  }
+
+  view.generateFilterCheckbox = function (data) {
+    var newHtml = ``;
+    for (var key in data) {
+      if (data.hasOwnProperty(key)) {
+        var template = `
+          <li>
+            <div class="right-icon check">
+              <span>${key} (${data[key].length})</span>
+              <input id="${key}-checkbox" type="checkbox" name="${key}">
+            </div>
+          </li>
+        `;
+        newHtml += template;
+      }
+    }
+    return newHtml;
+  }
+
+  view.updateYearFilters = function (data) {
+    yearsList.innerHTML = view.generateFilterCheckbox(data);
+  }
+
+  view.generateEventCheckbox = function (data) {
+    eventsList.innerHTML = '';
+    for (var eid in data) {
+      if (data.hasOwnProperty(eid)) {
+        model.findEventById(eid, function (res) {
+          if (res) {
+            var ename = (res.name) ? res.name : 'Other';
+            var template = `
+              <li>
+                <div class="right-icon check">
+                  <span>${ename} (${data[res.EventID].length})</span>
+                  <input id="${ename.replace(/\s/g,'')}-checkbox" type="checkbox" name="${ename}">
+                </div>
+              </li>
+            `;
+            eventsList.innerHTML += template;
+          } else {
+            var ename = 'Other';
+            var template = `
+              <li>
+                <div class="right-icon check">
+                  <span>${ename} (${data[eid].length})</span>
+                  <input id="${ename.replace(/\s/g,'')}-checkbox" type="checkbox" name="${ename}">
+                </div>
+              </li>
+            `;
+            eventsList.innerHTML += template;
+          }
+        })
+      }
+    }
   }
 
   /**
@@ -165,7 +223,7 @@ var view = (function () {
       toggleShow([divSubInfo], 'block');
       toggleShow([imageDelete], 'none');
     }
-    
+
     btnConfirmDelete.onclick = function () {
       toggleShow([divOptButtons], 'flex');
       toggleShow([divSubInfo], 'block');

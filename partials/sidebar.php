@@ -21,7 +21,7 @@
         <ul class="filters">
           <li>Date</li>
             <ul>
-              <li class="sub-filter">
+              <!-- <li class="sub-filter">
                 <div class="right-icon drop" data-toggle="collapse" data-target="#months">
                   <div class="title">Month</div>
                   <span class="icon">+</span>
@@ -37,7 +37,7 @@
                     }
                   ?>
                 </ul>
-              </div>
+              </div> -->
               <li class="sub-filter">
                 <div class="right-icon drop" data-toggle="collapse" data-target="#years">
                   <div class="title">Year</div>
@@ -45,7 +45,7 @@
                 </div>
               </li>
               <div id="years" class="collapse sub-dropdown">
-                <ul>
+                <ul id="years-list">
                 <?php 
                   $years = array('2013', '2014', '2015', '2016', '2017');
 
@@ -69,7 +69,11 @@
             </ul>
           </div>
           <li>Event Name</li>
-          <li>Event Type</li>
+          <div class="sub-dropdown">
+            <ul id="events-list">
+            </ul>
+          </div>
+          <!-- <li>Event Type</li> -->
         </ul>
       </li>
     </ul>

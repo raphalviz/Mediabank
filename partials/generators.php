@@ -1,38 +1,4 @@
 <?php
-  function readJSONFile($path) {
-    $str = file_get_contents($path);
-    $json = json_decode($str);
-    return $json;
-  }
-
-  function createImageCard($id, $filepath) {
-    $card = '
-    <div class="col-xl-3 col-lg-4 col-md-6 card-container">
-      <div class="card">
-        <div class="overlay">
-          <a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
-          <i id="img-' . $id . '" class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#image-modal" data-id="' . $id . '"></i>
-        </div>
-        <div class="crop">
-          <a href="image.php?filepath=' . $filepath . '"><img class="card-img grow" src="' . $filepath . '" alt="Card image cap"></a>
-        </div>
-      </div>
-    </div>';
-
-    return $card;
-  };
-
-  function readImageResponse($json) {
-    $innerHtml = '';
-
-    foreach ($json as $media) {
-      $innerHtml .= createImageCard($media->id, $media->filepath);
-    }
-    
-    return $innerHtml;
-  }
-
-
   function createFilterCheckbox($text) {
     $innerHtml = '
       <li>

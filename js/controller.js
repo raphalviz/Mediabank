@@ -61,4 +61,11 @@
     model.deleteMedia(e.detail['MediaID']);
   })
 
+  document.addEventListener('onYearsUpdated', function (e) {
+    view.updateYearFilters(e.detail);
+  })
+
+  document.addEventListener('onEventsUpdated', function (e) {
+    view.generateEventCheckbox(e.detail);
+  })
 }());
