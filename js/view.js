@@ -98,7 +98,7 @@ var view = (function () {
           <li>
             <div class="right-icon check">
               <span>${key} (${data[key].length})</span>
-              <input id="${key}-checkbox" type="checkbox" name="${key}">
+              <input id="${key}-checkbox" type="checkbox" onclick="view.toggleYear(this, ${key})" name="${key}">
             </div>
           </li>
         `;
@@ -112,6 +112,16 @@ var view = (function () {
     yearsList.innerHTML = view.generateFilterCheckbox(data);
   }
 
+  view.toggleYear = function (elem, year) {
+    if (elem.checked == true) {
+      console.log("checked " + year);
+      document.dispatchEvent(new CustomEvent('onYearChecked', { detail: { year } }));
+    } else {
+      console.log("unchecked " + year);
+      document.dispatchEvent(new CustomEvent('onYearUnchecked', { detail: { year } }));
+    }
+  }
+
   view.generateEventCheckbox = function (data) {
     eventsList.innerHTML = '';
     for (var eid in data) {
@@ -123,7 +133,7 @@ var view = (function () {
               <li>
                 <div class="right-icon check">
                   <span>${ename} (${data[res.EventID].length})</span>
-                  <input id="${ename.replace(/\s/g,'')}-checkbox" type="checkbox" name="${ename}">
+                  <input id="${ename.replace(/\s/g, '')}-checkbox" type="checkbox" onclick="view.toggleEvent(this, ${res.EventID})" name="${ename}">
                 </div>
               </li>
             `;
@@ -134,7 +144,7 @@ var view = (function () {
               <li>
                 <div class="right-icon check">
                   <span>${ename} (${data[eid].length})</span>
-                  <input id="${ename.replace(/\s/g,'')}-checkbox" type="checkbox" name="${ename}">
+                  <input id="${ename.replace(/\s/g, '')}-checkbox" type="checkbox" onclick="view.toggleEvent(this, ${eid})" name="${ename}">
                 </div>
               </li>
             `;
@@ -142,6 +152,16 @@ var view = (function () {
           }
         })
       }
+    }
+  }
+
+  view.toggleEvent = function (elem, eid) {
+    if (elem.checked == true) {
+      console.log("Checked " + eid);
+      document.dispatchEvent(new CustomEvent('onEventChecked', { detail: { eid } }));
+    } else {
+      console.log("Unchecked " + eid);
+      document.dispatchEvent(new CustomEvent('onEventUnchecked', { detail: { eid } }));
     }
   }
 

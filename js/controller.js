@@ -16,7 +16,7 @@
   // Called when text in searchbar changes
   searchbar.addEventListener('input', function (e) {
     var results;
-
+    state.resetFilters();
     state.searchIsLoading = true;
     model.searchByKeywords(searchbar.value, function (res) {
       results = res;
@@ -67,5 +67,36 @@
 
   document.addEventListener('onEventsUpdated', function (e) {
     view.generateEventCheckbox(e.detail);
+  })
+
+  document.addEventListener('onYearChecked', function (e) {
+    var yearChecked = e.detail.year;
+    state.filterYear(yearChecked);
+  })
+
+  document.addEventListener('onYearUnchecked', function (e) {
+    var yearUnchecked = e.detail.year;
+    state.unfilterYear(yearUnchecked);
+  })
+
+  document.addEventListener('onEventChecked', function (e) {
+    var eventChecked = e.detail.eid;
+    state.filterEvent(eventChecked);
+  })
+
+  document.addEventListener('onEventUnchecked', function (e) {
+    var eventUnchecked = e.detail.eid;
+    state.unfilterEvent(eventUnchecked);
+  })
+
+  document.addEventListener('onFilteredData', function (e) {
+    var data = e.detail.data;
+    console.log("From controller: ", data);
+    view.updateDisplay(data);
+  })
+
+  document.addEventListener('onUnfilteredData', function (e) {
+    var data = e.detail;
+    view.updateDisplay(data);
   })
 }());

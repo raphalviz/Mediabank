@@ -2,16 +2,23 @@
 var state = (function () {
   var state = {
     currentData: [],
-    modalShowing: false,
     currentMedia: {},
+
+    modalShowing: false,
     searchIsLoading: false,
     uploadFormShowing: false,
+
     yearsInState: {},
     yearsFiltered: {},
+
     eventsInState: {},
     eventsFiltered: {},
+
     filtersOn: false,
-    filteredData: []
+    filteredYearIds: [],
+    filteredEventIds: [],
+    filteredIds: [],
+    filteredData: {}
   };
 
   state.printState = function () {
@@ -24,7 +31,7 @@ var state = (function () {
     state.yearsInState = getYearsInState();
     document.dispatchEvent(new CustomEvent('onYearsUpdated', { detail: state.yearsInState }));
     state.eventsInState = getEventsInState();
-    document.dispatchEvent(new CustomEvent('onEventsUpdated', { detail: state.eventsInState}));
+    document.dispatchEvent(new CustomEvent('onEventsUpdated', { detail: state.eventsInState }));
   }
 
   state.editState = function (entry) {
@@ -52,6 +59,7 @@ var state = (function () {
     state.currentMedia = {};
   }
 
+
   function getYearsInState() {
     var years = {}
     state.currentData.forEach(media => {
@@ -65,17 +73,27 @@ var state = (function () {
     return years;
   }
 
-  function filterYear(year) {
+  state.filterYear = function (year) {
     state.yearsFiltered[year] = state.yearsInState[year];
-    document.dispatchEvent(new CustomEvent('onYearFiltered', { detail: {} }))
+    state.filteredYearIds = state.filteredYearIds.concat(state.yearsFiltered[year]);
+
+    updateFilteredIds();
+    checkFilters();
+    document.dispatchEvent(new CustomEvent('onYearFiltered', { detail: {} }));
   }
 
-  function unfilterYear(year) {
+  state.unfilterYear = function (year) {
+    state.filteredYearIds = state.filteredYearIds.filter(function (elem) {
+      return state.yearsFiltered[year].indexOf(elem) < 0;
+    })
+
     delete state.yearsFiltered[year];
+    updateFilteredIds();
+    checkFilters();
   }
 
   function getEventsInState() {
-    var events = {}
+    var events = {};
     state.currentData.forEach(media => {
       if (events[media.EventID] == undefined) {
         events[media.EventID] = [media.MediaID];
@@ -85,6 +103,73 @@ var state = (function () {
     });
 
     return events;
+  }
+
+  state.filterEvent = function (eid) {
+    state.eventsFiltered[eid] = state.eventsInState[eid];
+    state.filteredEventIds = state.filteredEventIds.concat(state.eventsFiltered[eid]);
+
+    updateFilteredIds();
+    checkFilters();
+  }
+
+  state.unfilterEvent = function (eid) {
+    state.filteredEventIds = state.filteredEventIds.filter(function (elem) {
+      return state.eventsFiltered[eid].indexOf(elem) < 0;
+    })
+
+    delete state.eventsFiltered[eid];
+    updateFilteredIds();
+    checkFilters();
+  }
+
+  function checkFilters() {
+    if (state.filteredIds.length == 0) {
+      state.filtersOn = false;
+    } else {
+      state.filtersOn = true;
+    }
+
+    console.log(state.filtersOn);
+    return state.filtersOn;
+  }
+
+  function updateFilteredIds() {
+    if (!state.filteredEventIds.length && state.filteredYearIds.length > 0) {
+      state.filteredIds = state.filteredYearIds;
+    } else if (!state.filteredYearIds.length && state.filteredEventIds.length > 0) {
+      state.filteredIds = state.filteredEventIds;
+    } else if (state.filteredEventIds.length > 0 && state.filteredYearIds.length > 0) {
+      state.filteredIds = state.filteredEventIds.filter(function (elem) {
+        return state.filteredYearIds.indexOf(elem) >= 0;
+      })
+    } else {
+      state.filteredIds = [];
+    }
+    console.log(state.filteredIds);
+    updateFilteredData();
+  }
+
+  function updateFilteredData() {
+    state.filteredData = state.currentData.filter(function (media) {
+      return state.filteredIds.indexOf(media.MediaID) >= 0;
+    })
+
+    console.log(state.filteredData);
+    if (state.filteredEventIds.length > 0 || state.filteredYearIds.length > 0) {
+      document.dispatchEvent(new CustomEvent('onFilteredData', { detail: { data: state.filteredData } }));
+    } else {
+      document.dispatchEvent(new CustomEvent('onUnfilteredData', { detail: state.currentData }));
+    }
+  }
+
+  state.resetFilters = function () {
+    state.eventsFiltered = {};
+    state.yearsFiltered = {};
+    state.filteredIds = [];
+    state.filteredYearIds = [];
+    state.filteredEventIds = [];
+    state.filtersOn = false;
   }
 
   return state;
