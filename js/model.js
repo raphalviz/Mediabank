@@ -112,9 +112,11 @@ var model = (function () {
   }
 
   model.createMediaEntries = function (postArray) {
-    postArray.forEach(element => {
-      model.createMediaEntry(element);
-    });
+    checkEvent(postArray[0]['event'], function (EventID) {
+      postArray.forEach(element => {
+        model.createMediaEntry(element);
+      });
+    })
   }
 
   /**
