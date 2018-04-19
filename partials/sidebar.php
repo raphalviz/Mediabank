@@ -56,7 +56,7 @@
                 </ul>
               </div>
             </ul>
-          <li>Media Type</li>
+          <!-- <li>Media Type</li>
           <div class="sub-dropdown">
             <ul>
               <?php 
@@ -67,7 +67,7 @@
                 }
               ?>
             </ul>
-          </div>
+          </div> -->
           <li>Event Name</li>
           <div class="sub-dropdown">
             <ul id="events-list">
