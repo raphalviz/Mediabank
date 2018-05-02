@@ -39,20 +39,13 @@
                 </ul>
               </div> -->
               <li class="sub-filter">
-                <div class="right-icon drop" data-toggle="collapse" data-target="#years">
+                <div class="right-icon drop">
                   <div class="title">Year</div>
-                  <span class="icon">+</span>
+                  <!-- <span class="icon">+</span> -->
                 </div>
               </li>
-              <div id="years" class="collapse sub-dropdown">
+              <div id="years" class="sub-dropdown">
                 <ul id="years-list">
-                <?php 
-                  $years = array('2013', '2014', '2015', '2016', '2017');
-
-                  foreach ($years as $year) {
-                    echo createFilterCheckbox($year);
-                  }
-                ?>
                 </ul>
               </div>
             </ul>
