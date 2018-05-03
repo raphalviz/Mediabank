@@ -99,4 +99,9 @@
     var data = e.detail;
     view.updateDisplay(data);
   })
+
+  document.addEventListener('onKeywordClicked', function (e) {
+    var keyword = e.detail;
+    console.log(keyword);
+  })
 }());
