@@ -17,6 +17,7 @@ var view = (function () {
   var divOptButtons = document.getElementsByClassName('option-btns')[0];
   var divSubInfo = document.getElementById('sub-info-content');
 
+  var inputSearch = document.getElementById('side-searchbar');
   var inputEditEvent = document.getElementById('editEvent');
   var inputEditYear = document.getElementById('editYear');
   var inputEditKeywords = document.getElementById('editKeywords');
@@ -196,6 +197,20 @@ var view = (function () {
     toggleShowEdit();
   }
 
+  function generateKeywordLinks(keywords) {
+    /* Temporary delimiter is space and new line, change to comma once db is cleaned */
+    var keywordArray = keywords.split(/ |\n/);
+    var elemArray = [];
+    console.log(keywordArray);
+
+    keywordArray.forEach(keyword => {
+      var newElem = '<span class="text-primary tag-links">' + keyword + '</span>';
+      elemArray.push(newElem);
+    });
+
+    return elemArray;
+  }
+
   // When magnifying glass on image is clicked:
   $('#image-modal').on('show.bs.modal', function (event) {
     var result;
@@ -231,7 +246,19 @@ var view = (function () {
     inputEditKeywords.value = result['keywords'];
     $('#info-year')[0].innerHTML = result['year'];
     $('#upload-date')[0].innerHTML = month[uploaded.getMonth()] + " " + uploaded.getUTCDate() + ", " + uploaded.getFullYear();
-    // $('#keywords-list')[0].innerHTML = result['keywords'];
+
+    var keywordHTML = generateKeywordLinks(result['keywords']);
+    $('#keywords-list')[0].innerHTML = keywordHTML.join(' ');
+
+    var keywordElems = document.getElementsByClassName('tag-links');
+    for (var i = 0; i < keywordElems.length; i++) {
+      keywordElems[i].onclick = function () {
+        modal.modal('hide');
+        inputSearch.value = this.innerHTML;
+        inputSearch.dispatchEvent(new Event('input'));
+        document.dispatchEvent(new CustomEvent('onKeywordClicked', { detail: this.innerHTML }));
+      }
+    }
 
     btnDelete.onclick = function () {
       toggleShow([divSubInfo, divOptButtons], 'none');

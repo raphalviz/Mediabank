@@ -506,3 +506,7 @@ div.dz-preview {
   display: flex; }
   #edit-buttons button {
     font-weight: 200; }
+
+.tag-links {
+  cursor: pointer;
+  text-decoration: underline; }
