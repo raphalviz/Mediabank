@@ -1,7 +1,6 @@
 <script src="js/lib/dropzone.js"></script>
 <div id="upload-page">
   <div class="top-controls">
-    
   </div>
   <div class="form-wrapper">
     <div id="previews" class="dropzone-previews">
@@ -23,16 +22,17 @@
         <div id="upload-info">
           <div class="form-group">
             <label for="inputEvent">Event Name</label>
-            <input type="text" class="form-control" id="inputEvent" aria-describedby="event" placeholder="Enter event name">
+            <input type="text" class="form-control" id="inputEvent" aria-describedby="event" placeholder="Get Started">
             <small id="emailHelp" class="form-text text-muted">All queued files will be associated with this event.</small>
           </div>
           <div class="form-group">
             <label for="inputYear">Year</label>
-            <input type="text" class="form-control" id="inputYear" aria-describedby="year" placeholder="Enter year">
+            <input type="text" class="form-control" id="inputYear" aria-describedby="year" placeholder="2018">
           </div>
-          <div class="form-group">
+          <div>
             <label for="inputKeywords">Keywords</label>
-            <input type="text" class="form-control" id="inputKeywords" aria-describedby="keywords" placeholder="Enter keywords">
+            <input type="text" class="form-control" id="inputKeywords" aria-describedby="keywords" placeholder="Student, Fair, Outside">
+            <small id="emailHelp" class="form-text text-muted">Separate keywords with a comma</small>
           </div>
           <button class="btn btn-primary btn-disabled" id="submit-dz" disabled>Begin Upload</button>
         </div>

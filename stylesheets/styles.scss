@@ -420,9 +420,9 @@ i {
           display: flex;
         }
         #sub-info-content {
-          // position:absolute;
-
-          max-height: 50%;
+          position:absolute;
+          height: calc(100% - 245px);
+          // max-height: 50%;
           padding-right: 15px;
           margin-top: 7px;
 
@@ -704,9 +704,9 @@ div.dz-preview {
   transition: width 1.5s ease;
 }
 
-.form-group {
-  margin-bottom: 0 !important;
-}
+// .form-group {
+//   margin-bottom: 0 !important;
+// }
 
 .btn-disabled {
   cursor: not-allowed;

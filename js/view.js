@@ -81,16 +81,30 @@ var view = (function () {
     return template;
   }
 
+  /**
+   * Use given data to generate HTML and insert it to media grid
+   * 
+   * @param {array} data - has objects representing media
+   */
   view.updateDisplay = function (data) {
     var template = view.generateDisplay(data);
     mediaGrid.innerHTML = template;
   }
 
+  /**
+   * Initializes the media grid by emitting an onStartUp event
+   */
   view.startupDisplay = function () {
     state.clearState();
     document.dispatchEvent(new CustomEvent('onStartUp', { detail: {} }));
   }
 
+  /**
+   * Generates relevant filter checkboxes for the years found in media
+   * 
+   * @param {array} data - has objects representing media
+   * @return {string} HTML template of the checkboxes
+   */
   view.generateFilterCheckbox = function (data) {
     var newHtml = ``;
     for (var key in data) {
@@ -109,10 +123,22 @@ var view = (function () {
     return newHtml;
   }
 
+  /**
+   * Use given data to generate HTML and insert it to the side bar
+   * 
+   * @param {string} data - has objects representing media
+   */
   view.updateYearFilters = function (data) {
     yearsList.innerHTML = view.generateFilterCheckbox(data);
   }
 
+  /**
+   * Used for year filter checkboxes, checks for if  the element has been checked
+   * or unchecked and dispatches corresponding events
+   * 
+   * @param {HTML element} elem - An HTML checkbox
+   * @param {string} year 
+   */
   view.toggleYear = function (elem, year) {
     if (elem.checked == true) {
       console.log("checked " + year);
@@ -123,6 +149,10 @@ var view = (function () {
     }
   }
 
+  /**
+   * 
+   * @param {array} data 
+   */
   view.generateEventCheckbox = function (data) {
     eventsList.innerHTML = '';
     for (var eid in data) {
@@ -233,6 +263,7 @@ var view = (function () {
       inputEditEvent.value = res.name;
     })
 
+    /* Unused for now...
     model.getPeopleTagged(result.MediaID, function (res) {
       var tags = '';
       res.forEach(function (person) {
@@ -240,7 +271,7 @@ var view = (function () {
       })
       tags = tags.substring(0, tags.length - 2);
       peopleTagged.innerHTML = tags;
-    })
+    }) */
 
     inputEditYear.value = result['year'];
     inputEditKeywords.value = result['keywords'];

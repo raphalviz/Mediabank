@@ -26,8 +26,8 @@
                     <div id="sub-info-content">
                       <i class="fa fa-calendar-plus-o modal-icons" aria-hidden="true"></i><span id="upload-date">January 24, 2018</span>
                       <br>
-                      <i class="fa fa-users modal-icons" aria-hidden="true"></i><span id="people-tagged">people</span>
-                      <br>
+                      <!-- <i class="fa fa-users modal-icons" aria-hidden="true"></i><span id="people-tagged">people</span>
+                      <br> -->
                       <i class="fa fa-tags modal-icons" aria-hidden="true"></i><span id="keywords-list">people</span>
                     </div>
                     <!-- Delete confirmation -->

@@ -282,7 +282,8 @@ i {
     #image-modal div.modal-body div.container #info-content .option-btns {
       display: flex; }
     #image-modal div.modal-body div.container #info-content #sub-info-content {
-      max-height: 50%;
+      position: absolute;
+      height: calc(100% - 245px);
       padding-right: 15px;
       margin-top: 7px;
       overflow: scroll;
@@ -472,9 +473,6 @@ div.dz-preview {
 .progress-bar {
   -webkit-transition: width 2.5s ease;
   transition: width 1.5s ease; }
-
-.form-group {
-  margin-bottom: 0 !important; }
 
 .btn-disabled {
   cursor: not-allowed; }
