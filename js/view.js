@@ -150,8 +150,9 @@ var view = (function () {
   }
 
   /**
+   * Generates relevant filter checkboxes for events found in media
    * 
-   * @param {array} data 
+   * @param {array} data - has objects representing media
    */
   view.generateEventCheckbox = function (data) {
     eventsList.innerHTML = '';
