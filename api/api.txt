@@ -1,5 +1,6 @@
 ==========  CREATE  ==========
 
+-- Events --
 URL: /events/create.php
 Method: POST
 
@@ -16,12 +17,13 @@ Response:
     Content: "Unauthorized"
 
 Example:
-    $.post('api/events/create.php', { 'name': 'Get Started}, function (response) {
+    $.post('api/events/create.php', { 'name': 'Get Started }, function (response) {
         return response;
     })
 
 ----------------------------------
 
+-- Media --
 URL: /media/create.php
 Method: POST
 
@@ -66,6 +68,151 @@ Example:
 
 ==========  READ  ===========
 
+-- Events --
 URL: /events/read.php
 Method: GET
+Params: method=[findbyid, searchByName]
+    URL Examples:
+        /events/read.php?method=findbyid&id=7
+        /events/read.php?method=searchByName&name=Get Started
 
+Response:
+    Code: 200
+    Content:
+        {
+            EventID: "1",
+            name: "Get Hired"
+        }
+
+Examples:
+    Get Event by ID:
+    $.get('api/events/read.php?method=findbyid&id=1', function (response) {
+        return response;
+    })
+
+    Get Event by Event Name:
+    $.get('api/events/read.php?method=searchByName&name=Get Started', function (response) {
+        return response;
+    })
+
+----------------------------------
+
+-- Media --
+URL: /media/create.php
+Method: GET
+Params: method=[findbyid, findall, keywords]
+    URL Examples:
+        /media/read.php?method=findbyid&id=17
+        /media/read.php?method=findall
+        /media/read.php?method=keywords&keywords=Get Hired
+
+Response:
+    Code: 200
+    Content:
+        [
+            {
+                MediaID: "17",
+                path: "uploads/000001/1524582534_15adf4886efed6_IMG_2749.jpg",
+                year: "2017",
+                type: "image",
+                uploaded: "2018-04-17",
+                keywords: "Get Started Test Tags Cool",
+                EventID: "2"
+            },
+            {
+                MediaID: "19",
+                path: "uploads/000001/1524582539_15adf488baf4fa_IMG_2756.jpg",
+                year: "2016",
+                type: "image",
+                uploaded: "2018-04-17",
+                keywords: "Entrepreneur Expo Table Test",
+                EventID: "8"
+            },
+            ...
+        ]
+
+Examples:
+    Get Media by ID:
+    $.get('api/media/read.php?method=findbyid&id=17', function (response) {
+        return response;
+    })
+
+    Find All (Limit 50):
+    Get Media by ID:
+    $.get('api/media/read.php?method=findall', function (response) {
+        return response;
+    })
+
+    Search by keywords:
+    Get Media by ID:
+    $.get('api/media/read.php?method=keywords&keywords=Hired', function (response) {
+        return response;
+    })
+
+
+
+==========  UPDATE  ===========
+
+-- Media --
+URL: /media/update.php
+Method: POST
+
+Request Body: 
+    {
+        EventID: [string] ID of Event,
+        year: [int] Year of media,
+        keywords: [string] Keywords used for search,
+        MediaID: [string] ID of media being updated
+    }
+
+    Example:
+        {
+            EventID: "1",
+            year: 2018,
+            keywords: "New Keywords",
+            MediaID: "27"
+        }
+
+Response:
+    Code: 200
+    Content: "Updated"
+
+    Code: 401
+    Content: "Unauthorized"
+
+Example:
+    $.post('api/media/update.php',
+        {
+            EventID: "1",
+            year: 2018,
+            keywords: "New Keywords",
+            MediaID: "27"
+        }, function (response) {
+            return response;
+        }
+    )
+
+
+
+==========  DELETE  ===========
+
+-- Media --
+URL: /media/delete.php
+Method: POST
+
+Request Body:
+    {
+        MediaID: [string] ID of Media to be deleted
+    }
+
+Response:
+    Code: 200
+    Content: "Success"
+
+    Code: 401
+    Content: "Unauthorized"
+
+Example:
+    $.post('api/media/delete.php', { MediaID: "7" }, function (response) {
+        return response;
+    })
