@@ -1,0 +1,71 @@
+==========  CREATE  ==========
+
+URL: /events/create.php
+Method: POST
+
+Request Body: 
+    { name: [string] Name of event }
+    Example:
+        { name: "Get Started" }
+
+Response:
+    Code: 200
+    Content: EventID
+
+    Code: 401
+    Content: "Unauthorized"
+
+Example:
+    $.post('api/events/create.php', { 'name': 'Get Started}, function (response) {
+        return response;
+    })
+
+----------------------------------
+
+URL: /media/create.php
+Method: POST
+
+Request Body:
+    {
+        path: [string] Path to media file,
+        year: [string] Year of associated event,
+        EventID: [int] ID of associated event,
+        type: [string] Type of event,
+        uploaded: [date],
+        keywords: [string] Keywords used for search
+    }
+    Example:
+        {
+            path: '/uploads/000001/picture.jpg',
+            year: '2018',
+            EventID: 2,
+            keywords: 'Students Learning'
+        }
+
+Response:
+    Code: 200
+    Content: "Success"
+
+    Code: 401
+    Content: "Unauthorized"
+
+Example:
+    $.post('api/media/create.php', 
+        {
+            path: '/uploads/000001/picture.jpg',
+            year: '2018',
+            EventID: 2,
+            date: Date,
+            keywords: 'Students Learning'
+        }, function (response) {
+            return response;
+        }
+    )
+
+
+
+==========  READ  ===========
+
+URL: /events/read.php
+Method: GET
+
