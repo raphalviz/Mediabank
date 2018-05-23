@@ -68,7 +68,7 @@ var model = (function () {
    * @param {function} callback
    */
   var checkEvent = function (eventName, callback) {
-    $.get('api/events/read.php?method=searchByName&name=' + eventName, function (response) {
+    $.get('api/events/read.php?method=searchByName&name=' + encodeURIComponent(eventName), function (response) {
       var exists = response.length === 0 ? false : true;
       if (!exists) {
         $.post('api/events/create.php', { 'name': eventName }, function (res) {

@@ -35,7 +35,7 @@ switch ($method) {
     findById($db, $_GET['id']);
     break;
   case 'searchByName':
-    searchByName($db, $_GET['name']);
+    searchByName($db, htmlspecialchars($_GET['name']));
     break;
 }
 
