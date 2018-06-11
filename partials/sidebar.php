@@ -1,7 +1,18 @@
 <div id="sidebar">
   <div class="top-menu">
-    <div class="home"><i class="fa fa-home" aria-hidden="true"></i></div>
-    <div class="settings"><i class="fa fa-cog" aria-hidden="true"></i></div>
+    <button class="settings" onclick="window.location='index.php'"><i class="fa fa-home" aria-hidden="true"></i></button>
+
+    <!-- 
+      settings can provide dropdown menu for
+      - logout (redirects to logout.php, session ends)
+      -   
+   -->
+    <button class="settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="pass-change.php">Change Password</a>
+      <a class="dropdown-item" href="login.php">Logout</a>
+    </div> 
+
     <div class="upload">
       <div>
         <i class="fa fa-upload" aria-hidden="true"></i> 
