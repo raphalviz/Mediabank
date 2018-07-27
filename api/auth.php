@@ -6,10 +6,10 @@ function isAuth() {
     return FALSE;
   }
   
-  $host_name = "localhost:8889";
-  $database = "mediabank";
-  $user_name = "root";
-  $pwd = "root";
+  $host_name = "";
+  $database = "";
+  $user_name = "";
+  $pwd = "";
   
   $connect = mysqli_connect( $host_name, $user_name, $pwd, $database );
   $username = $_SESSION[ 'username' ];

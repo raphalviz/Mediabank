@@ -2,10 +2,10 @@
 
 class Database{
   
-  private $host = "localhost:8889";
-  private $db_name = "mediabank";
-  private $username = "root";
-  private $password = "root";
+  private $host = "";
+  private $db_name = "";
+  private $username = "";
+  private $password = "";
   public $conn;
 
   public function getConnection(){
